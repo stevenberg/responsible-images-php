@@ -2,6 +2,10 @@
 
 namespace StevenBerg\ResponsiveImages\Values;
 
+use StevenBerg\ResponsiveImages\Square;
+use StevenBerg\ResponsiveImages\Tall;
+use StevenBerg\ResponsiveImages\Wide;
+
 class Shape extends Value
 {
     const VALUES = ['original', 'square', 'tall', 'wide'];
