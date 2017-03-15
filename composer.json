@@ -1,0 +1,41 @@
+{
+    "name": "stevenberg/responsive-images",
+    "type": "library",
+    "description": "A PHP for display responsive images",
+    "keywords": [
+        "images",
+        "responsive"
+    ],
+    "license": "GPL-3.0",
+    "support": {
+        "issues": "https://github.com/stevenberg/responsive-images/issues",
+        "source": "https://github.com/stevenberg/responsive-images"
+    },
+    "authors": [
+        {
+            "name": "Steven Berg",
+            "email": "steven@stevenberg.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "php-ds/php-ds": "1.1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.0.*"
+    },
+    "archive": {
+        "exclude": ["/tests"]
+    },
+    "autoload": {
+        "psr-4": {
+            "StevenBerg\\ResponsiveImages\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StevenBerg\\ResponsiveImages\\Tests\\": "tests/"
+        }
+    }
+}
