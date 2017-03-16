@@ -26,9 +26,9 @@ class Square extends Image
     protected function options(Size $size): array
     {
         return [
-            'width' => $size,
-            'height' => $size,
-            'gravity' => $this->options['gravity'],
+            'width' => $size->value,
+            'height' => $size->value,
+            'gravity' => $this->options['gravity']->value,
         ];
     }
 }

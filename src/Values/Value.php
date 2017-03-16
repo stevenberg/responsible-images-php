@@ -55,6 +55,20 @@ abstract class Value
     }
 
     /**
+     * Return overloaded properties.
+     *
+     * - `value` is the underlying internal value.
+     *
+     * @return mixed
+     */
+    public function __get(string $name)
+    {
+        if ($name === 'value') {
+            return $this->value;
+        }
+    }
+
+    /**
      * Convert the value to a string.
      *
      * @return string

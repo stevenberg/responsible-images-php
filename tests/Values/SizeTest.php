@@ -5,7 +5,6 @@
  * @license GNU General Public License, version 3
  */
 
-
 namespace StevenBerg\ResponsibleImages\Tests;
 
 use DomainException;

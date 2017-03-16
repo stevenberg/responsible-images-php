@@ -110,7 +110,7 @@ class Image
      */
     protected function options(Size $size): array
     {
-        return ['width' => $size];
+        return ['width' => $size->value];
     }
 
     /**
