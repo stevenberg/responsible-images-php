@@ -7,16 +7,28 @@
 
 namespace StevenBerg\ResponsibleImages;
 
+use StevenBerg\ResponsibleImages\Urls\Maker;
+use StevenBerg\ResponsibleImages\Values\Gravity;
+use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Size;
 
 class Wide extends Image
 {
+    /* public function __construct(Name $name, Maker $maker, array $options = []) */
+    /* { */
+    /*     parent::__construct($name, $maker, $options); */
+
+    /*     if (!isset($this->options['gravity'])) { */
+    /*         $this->options['gravity'] = Gravity::value('auto'); */
+    /*     } */
+    /* } */
+
     protected function options(Size $size): array
     {
         return [
             'width' => $size,
             'height' => $size->half(),
-            'gravity' => $this->gravity,
+            'gravity' => $this->options['gravity'],
         ];
     }
 }

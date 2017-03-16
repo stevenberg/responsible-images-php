@@ -22,8 +22,8 @@ class SquareTest extends TestCase
     {
         $this->image = new Square(
             Name::value('test.jpg'),
-            Gravity::value('center'),
-            new Simple('https://example.com')
+            new Simple('https://example.com'),
+            ['gravity' => Gravity::value('center')]
         );
     }
 

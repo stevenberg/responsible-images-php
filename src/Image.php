@@ -8,7 +8,6 @@
 namespace StevenBerg\ResponsibleImages;
 
 use StevenBerg\ResponsibleImages\Urls\Maker;
-use StevenBerg\ResponsibleImages\Values\Gravity;
 use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Shape;
 use StevenBerg\ResponsibleImages\Values\Size;
@@ -24,9 +23,9 @@ class Image
     protected $name;
 
     /**
-     * @var \StevenBerg\ResponsibleImages\Values\Gravity The gravity to use when cropping.
+     * @var (\StevenBerg\ResponsibleImages\Values\Value|string)[] Options to pass to the URL maker.
      */
-    protected $gravity;
+    protected $options;
 
     /**
      * @var \StevenBerg\ResponsibleImages\Urls\Maker The class to use to generate resized image URLs.
@@ -37,13 +36,13 @@ class Image
      * Constructor.
      *
      * @param \StevenBerg\ResponsibleImages\Values\Name $name The image's name.
-     * @param \StevenBerg\ResponsibleImages\Values\Gravity The gravity to use when cropping.
      * @param \StevenBerg\ResponsibleImages\Urls\Maker The class to use to generate resized image URLs.
+     * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the URL maker class.
      */
-    public function __construct(Name $name, Gravity $gravity, Maker $maker)
+    public function __construct(Name $name, Maker $maker, array $options = [])
     {
         $this->name = $name;
-        $this->gravity = $gravity;
+        $this->options = $options;
         $this->maker = $maker;
     }
 
@@ -120,22 +119,22 @@ class Image
      *
      * @param \StevenBerg\ResponsibleImages\Values\Shape $shape The requested image shape.
      * @param \StevenBerg\ResponsibleImages\Values\Name $name The image's name.
-     * @param \StevenBerg\ResponsibleImages\Values\Gravity $gravity The gravity to use when cropping.
      * @param \StevenBerg\ResponsibleImages\Urls\Maker The class to use to generate resized image URLs.
+     * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the URL maker class.
      *
      * @return self
      */
-    public static function fromShape(Shape $shape, Name $name, Gravity $gravity, Maker $maker): self
+    public static function fromShape(Shape $shape, Name $name, Maker $maker, array $options): self
     {
         switch ($shape) {
         case 'square':
-             return new Square($name, $gravity, $maker);
+             return new Square($name, $maker, $options);
         case 'tall':
-            return new Tall($name, $gravity, $maker);
+            return new Tall($name, $maker, $options);
         case 'wide':
-            return new Wide($name, $gravity, $maker);
+            return new Wide($name, $maker, $options);
         default:
-            return new self($name, $gravity, $maker);
+            return new self($name, $maker, $options);
         }
     }
 }
