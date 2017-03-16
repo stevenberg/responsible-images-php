@@ -1,13 +1,29 @@
 <?php
+/**
+ * @author Steven Berg <steven@stevenberg.net>
+ * @copyright 2017 Steven Berg
+ * @license GNU General Public License, version 3
+ */
 
 namespace StevenBerg\ResponsiveImages\Urls;
 
 use StevenBerg\ResponsiveImages\Values\Name;
 
+/**
+ * Simple URL maker, mainly for testing.
+ *
+ * Assumes images have URLs like `https://example.com/width-100_image.jpg`
+ * for the 100px version of image.jpg.
+ */
 class Simple implements Maker
 {
     private $urlPrefix;
 
+    /**
+     * Constructor.
+     *
+     * @param string $urlPrefix Value to prefix to generated URLs, e.g. `https://example.com`
+     */
     public function __construct(string $urlPrefix)
     {
         $this->urlPrefix = $urlPrefix;
