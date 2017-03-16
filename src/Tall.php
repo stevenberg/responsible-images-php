@@ -5,9 +5,9 @@
  * @license GNU General Public License, version 3
  */
 
-namespace StevenBerg\ResponsiveImages;
+namespace StevenBerg\ResponsibleImages;
 
-use StevenBerg\ResponsiveImages\Values\Size;
+use StevenBerg\ResponsibleImages\Values\Size;
 
 class Tall extends Image
 {

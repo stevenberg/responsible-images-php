@@ -6,19 +6,19 @@
  */
 
 
-namespace StevenBerg\ResponsiveImages\Tests;
+namespace StevenBerg\ResponsibleImages\Tests;
 
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsiveImages\Image;
-use StevenBerg\ResponsiveImages\SizeRange;
-use StevenBerg\ResponsiveImages\Square;
-use StevenBerg\ResponsiveImages\Tall;
-use StevenBerg\ResponsiveImages\Urls\Simple;
-use StevenBerg\ResponsiveImages\Values\Gravity;
-use StevenBerg\ResponsiveImages\Values\Name;
-use StevenBerg\ResponsiveImages\Values\Shape;
-use StevenBerg\ResponsiveImages\Values\Size;
-use StevenBerg\ResponsiveImages\Wide;
+use StevenBerg\ResponsibleImages\Image;
+use StevenBerg\ResponsibleImages\SizeRange;
+use StevenBerg\ResponsibleImages\Square;
+use StevenBerg\ResponsibleImages\Tall;
+use StevenBerg\ResponsibleImages\Urls\Simple;
+use StevenBerg\ResponsibleImages\Values\Gravity;
+use StevenBerg\ResponsibleImages\Values\Name;
+use StevenBerg\ResponsibleImages\Values\Shape;
+use StevenBerg\ResponsibleImages\Values\Size;
+use StevenBerg\ResponsibleImages\Wide;
 
 class ImageTest extends TestCase
 {

@@ -6,11 +6,11 @@
  */
 
 
-namespace StevenBerg\ResponsiveImages\Tests;
+namespace StevenBerg\ResponsibleImages\Tests;
 
 use DomainException;
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsiveImages\Values\Size;
+use StevenBerg\ResponsibleImages\Values\Size;
 
 class SizeTest extends TestCase
 {

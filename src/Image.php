@@ -5,13 +5,13 @@
  * @license GNU General Public License, version 3
  */
 
-namespace StevenBerg\ResponsiveImages;
+namespace StevenBerg\ResponsibleImages;
 
-use StevenBerg\ResponsiveImages\Urls\Maker;
-use StevenBerg\ResponsiveImages\Values\Gravity;
-use StevenBerg\ResponsiveImages\Values\Name;
-use StevenBerg\ResponsiveImages\Values\Shape;
-use StevenBerg\ResponsiveImages\Values\Size;
+use StevenBerg\ResponsibleImages\Urls\Maker;
+use StevenBerg\ResponsibleImages\Values\Gravity;
+use StevenBerg\ResponsibleImages\Values\Name;
+use StevenBerg\ResponsibleImages\Values\Shape;
+use StevenBerg\ResponsibleImages\Values\Size;
 
 /**
  * Represents a responsive image.
@@ -19,26 +19,26 @@ use StevenBerg\ResponsiveImages\Values\Size;
 class Image
 {
     /**
-     * @var \StevenBerg\ResponsiveImages\Values\Name The image's name.
+     * @var \StevenBerg\ResponsibleImages\Values\Name The image's name.
      */
     protected $name;
 
     /**
-     * @var \StevenBerg\ResponsiveImages\Values\Gravity The gravity to use when cropping.
+     * @var \StevenBerg\ResponsibleImages\Values\Gravity The gravity to use when cropping.
      */
     protected $gravity;
 
     /**
-     * @var \StevenBerg\ResponsiveImages\Urls\Maker The class to use to generate resized image URLs.
+     * @var \StevenBerg\ResponsibleImages\Urls\Maker The class to use to generate resized image URLs.
      */
     protected $maker;
 
     /**
      * Constructor.
      *
-     * @param \StevenBerg\ResponsiveImages\Values\Name $name The image's name.
-     * @param \StevenBerg\ResponsiveImages\Values\Gravity The gravity to use when cropping.
-     * @param \StevenBerg\ResponsiveImages\Urls\Maker The class to use to generate resized image URLs.
+     * @param \StevenBerg\ResponsibleImages\Values\Name $name The image's name.
+     * @param \StevenBerg\ResponsibleImages\Values\Gravity The gravity to use when cropping.
+     * @param \StevenBerg\ResponsibleImages\Urls\Maker The class to use to generate resized image URLs.
      */
     public function __construct(Name $name, Gravity $gravity, Maker $maker)
     {
@@ -50,7 +50,7 @@ class Image
     /**
      * Return the URL for the image resized to the given width.
      *
-     * @param \StevenBerg\ResponsiveImages\Values\Size $size The requested image width.
+     * @param \StevenBerg\ResponsibleImages\Values\Size $size The requested image width.
      *
      * @return string The URL of the resized image.
      */
@@ -62,7 +62,7 @@ class Image
     /**
      * Return the contents of a srcset attribute for the given range of widths.
      *
-     * @param \StevenBerg\ResponsiveImages\SizeRange $range The requested range of widths.
+     * @param \StevenBerg\ResponsibleImages\SizeRange $range The requested range of widths.
      *
      * @return string The srcset.
      */
@@ -77,8 +77,8 @@ class Image
     /**
      * Return a responsive HTML `img` tag for the image.
      *
-     * @param \StevenBerg\ResponsiveImages\SizeRange $range The requested range of widths for the `srcset`.
-     * @param \StevenBerg\ResponsiveImages\Values\Size $defaultSize The width to use for the `src`.
+     * @param \StevenBerg\ResponsibleImages\SizeRange $range The requested range of widths for the `srcset`.
+     * @param \StevenBerg\ResponsibleImages\Values\Size $defaultSize The width to use for the `src`.
      * @param string[] $attributes List of attributes to add to the `img` tag.
      *
      * @return string The `img` tag.
@@ -105,9 +105,9 @@ class Image
      * Return the list of options to pass to the URL maker class for an image of
      * the given width.
      *
-     * @param \StevenBerg\ResponsiveImages\Values\Size $size The requested image width.
+     * @param \StevenBerg\ResponsibleImages\Values\Size $size The requested image width.
      *
-     * @return (\StevenBerg\ResponsiveImages\Values\Value|string) The array of options.
+     * @return (\StevenBerg\ResponsibleImages\Values\Value|string) The array of options.
      */
     protected function options(Size $size): array
     {
@@ -118,10 +118,10 @@ class Image
      * Return an `Image` object of the appropriate class based on
      * a `Shape` value.
      *
-     * @param \StevenBerg\ResponsiveImages\Values\Shape $shape The requested image shape.
-     * @param \StevenBerg\ResponsiveImages\Values\Name $name The image's name.
-     * @param \StevenBerg\ResponsiveImages\Values\Gravity $gravity The gravity to use when cropping.
-     * @param \StevenBerg\ResponsiveImages\Urls\Maker The class to use to generate resized image URLs.
+     * @param \StevenBerg\ResponsibleImages\Values\Shape $shape The requested image shape.
+     * @param \StevenBerg\ResponsibleImages\Values\Name $name The image's name.
+     * @param \StevenBerg\ResponsibleImages\Values\Gravity $gravity The gravity to use when cropping.
+     * @param \StevenBerg\ResponsibleImages\Urls\Maker The class to use to generate resized image URLs.
      *
      * @return self
      */

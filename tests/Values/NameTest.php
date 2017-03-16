@@ -6,11 +6,11 @@
  */
 
 
-namespace StevenBerg\ResponsiveImages\Tests\Values;
+namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use DomainException;
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsiveImages\Values\Name;
+use StevenBerg\ResponsibleImages\Values\Name;
 
 class NameTest extends TestCase
 {

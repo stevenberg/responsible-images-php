@@ -5,9 +5,9 @@
  * @license GNU General Public License, version 3
  */
 
-namespace StevenBerg\ResponsiveImages\Urls;
+namespace StevenBerg\ResponsibleImages\Urls;
 
-use StevenBerg\ResponsiveImages\Values\Name;
+use StevenBerg\ResponsibleImages\Values\Name;
 
 /**
  * Simple URL maker, mainly for testing.

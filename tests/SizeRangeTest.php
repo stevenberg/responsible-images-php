@@ -6,11 +6,11 @@
  */
 
 
-namespace StevenBerg\ResponsiveImages\Tests;
+namespace StevenBerg\ResponsibleImages\Tests;
 
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsiveImages\SizeRange;
-use StevenBerg\ResponsiveImages\Values\Size;
+use StevenBerg\ResponsibleImages\SizeRange;
+use StevenBerg\ResponsibleImages\Values\Size;
 
 class SizeRangeTest extends TestCase
 {

@@ -5,11 +5,11 @@
  * @license GNU General Public License, version 3
  */
 
-namespace StevenBerg\ResponsiveImages\Values;
+namespace StevenBerg\ResponsibleImages\Values;
 
-use StevenBerg\ResponsiveImages\Square;
-use StevenBerg\ResponsiveImages\Tall;
-use StevenBerg\ResponsiveImages\Wide;
+use StevenBerg\ResponsibleImages\Square;
+use StevenBerg\ResponsibleImages\Tall;
+use StevenBerg\ResponsibleImages\Wide;
 
 /**
  * Represents the shape of the resized images.

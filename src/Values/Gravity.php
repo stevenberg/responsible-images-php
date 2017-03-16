@@ -5,7 +5,7 @@
  * @license GNU General Public License, version 3
  */
 
-namespace StevenBerg\ResponsiveImages\Values;
+namespace StevenBerg\ResponsibleImages\Values;
 
 /**
  * Represents the location of focus when an image is cropped.

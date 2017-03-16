@@ -6,12 +6,12 @@
  */
 
 
-namespace StevenBerg\ResponsiveImages\Tests\Urls;
+namespace StevenBerg\ResponsibleImages\Tests\Urls;
 
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsiveImages\Urls\Simple;
-use StevenBerg\ResponsiveImages\Values\Name;
-use StevenBerg\ResponsiveImages\Values\Size;
+use StevenBerg\ResponsibleImages\Urls\Simple;
+use StevenBerg\ResponsibleImages\Values\Name;
+use StevenBerg\ResponsibleImages\Values\Size;
 
 class SimpleTest extends TestCase
 {

@@ -6,11 +6,11 @@
  */
 
 
-namespace StevenBerg\ResponsiveImages\Tests\Values;
+namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use DomainException;
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsiveImages\Values\Gravity;
+use StevenBerg\ResponsibleImages\Values\Gravity;
 
 class GravityTest extends TestCase
 {

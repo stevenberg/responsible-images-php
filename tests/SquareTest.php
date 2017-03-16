@@ -6,15 +6,15 @@
  */
 
 
-namespace StevenBerg\ResponsiveImages\Tests;
+namespace StevenBerg\ResponsibleImages\Tests;
 
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsiveImages\SizeRange;
-use StevenBerg\ResponsiveImages\Square;
-use StevenBerg\ResponsiveImages\Urls\Simple;
-use StevenBerg\ResponsiveImages\Values\Gravity;
-use StevenBerg\ResponsiveImages\Values\Name;
-use StevenBerg\ResponsiveImages\Values\Size;
+use StevenBerg\ResponsibleImages\SizeRange;
+use StevenBerg\ResponsibleImages\Square;
+use StevenBerg\ResponsibleImages\Urls\Simple;
+use StevenBerg\ResponsibleImages\Values\Gravity;
+use StevenBerg\ResponsibleImages\Values\Name;
+use StevenBerg\ResponsibleImages\Values\Size;
 
 class SquareTest extends TestCase
 {

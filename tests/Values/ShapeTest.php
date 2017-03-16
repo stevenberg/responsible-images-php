@@ -6,14 +6,14 @@
  */
 
 
-namespace StevenBerg\ResponsiveImages\Tests\Values;
+namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use DomainException;
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsiveImages\Square;
-use StevenBerg\ResponsiveImages\Tall;
-use StevenBerg\ResponsiveImages\Values\Shape;
-use StevenBerg\ResponsiveImages\Wide;
+use StevenBerg\ResponsibleImages\Square;
+use StevenBerg\ResponsibleImages\Tall;
+use StevenBerg\ResponsibleImages\Values\Shape;
+use StevenBerg\ResponsibleImages\Wide;
 
 class ShapeTest extends TestCase
 {
