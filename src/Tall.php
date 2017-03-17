@@ -12,6 +12,9 @@ use StevenBerg\ResponsibleImages\Values\Gravity;
 use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Size;
 
+/**
+ * Represents a responsive image twice as tall as it is wide.
+ */
 class Tall extends Image
 {
     protected function options(Size $size): array
