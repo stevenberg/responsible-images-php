@@ -7,9 +7,7 @@
 
 namespace StevenBerg\ResponsibleImages;
 
-use StevenBerg\ResponsibleImages\Urls\Maker;
 use StevenBerg\ResponsibleImages\Values\Gravity;
-use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Size;
 
 /**

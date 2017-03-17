@@ -7,12 +7,10 @@
 
 namespace StevenBerg\ResponsibleImages\Tests\Urls;
 
-use RuntimeException;
 use PHPUnit\Framework\TestCase;
+use RuntimeException;
 use StevenBerg\ResponsibleImages\Urls\Maker;
 use StevenBerg\ResponsibleImages\Urls\Simple;
-use StevenBerg\ResponsibleImages\Values\Name;
-use StevenBerg\ResponsibleImages\Values\Size;
 
 class MakerTest extends TestCase
 {
