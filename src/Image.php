@@ -36,10 +36,10 @@ class Image
      * Constructor.
      *
      * @param Values\Name $name The image's name.
-     * @param Urls\Maker The class to use to generate resized image URLs.
      * @param Values\Value[] $options Options to pass to the URL maker class.
+     * @param Urls\Maker The class to use to generate resized image URLs.
      */
-    public function __construct(Name $name, Maker $maker, array $options = [])
+    public function __construct(Name $name, array $options = [], Maker $maker = null)
     {
         $this->name = $name;
         $this->options = $options;
@@ -55,7 +55,7 @@ class Image
      */
     public function source(Size $size): string
     {
-        return $this->maker->make($this->name, $this->options($size));
+        return $this->maker()->make($this->name, $this->options($size));
     }
 
     /**
@@ -113,6 +113,11 @@ class Image
         return ['width' => $size->value];
     }
 
+    private function maker(): Maker
+    {
+        return $this->maker ?? Maker::defaultMaker();
+    }
+
     /**
      * Return an `Image` object of the appropriate class based on
      * a `Shape` value.
@@ -124,17 +129,21 @@ class Image
      *
      * @return self
      */
-    public static function fromShape(Shape $shape, Name $name, Maker $maker, array $options): self
+    public static function fromShape(
+        Shape $shape,
+        Name $name,
+        array $options = [],
+        Maker $maker = null): self
     {
         switch ($shape) {
         case 'square':
-             return new Square($name, $maker, $options);
+             return new Square($name, $options, $maker);
         case 'tall':
-            return new Tall($name, $maker, $options);
+            return new Tall($name, $options, $maker);
         case 'wide':
-            return new Wide($name, $maker, $options);
+            return new Wide($name, $options, $maker);
         default:
-            return new self($name, $maker, $options);
+            return new self($name, $options, $maker);
         }
     }
 }

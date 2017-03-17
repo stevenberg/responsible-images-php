@@ -25,8 +25,8 @@ class ImageTest extends TestCase
     {
         $this->image = new Image(
             Name::value('test.jpg'),
-            new Simple('https://example.com'),
-            ['gravity' => Gravity::value('auto')]
+            ['gravity' => Gravity::value('auto')],
+            new Simple('https://example.com')
         );
     }
 
@@ -84,7 +84,7 @@ class ImageTest extends TestCase
         foreach ($values as $value => $class) {
             $shape = Shape::value($value);
 
-            $this->assertInstanceOf($class, Image::fromShape($shape, $name, $maker, $options));
+            $this->assertInstanceOf($class, Image::fromShape($shape, $name, $options, $maker));
         }
     }
 }

@@ -19,7 +19,7 @@ class SimpleTest extends TestCase
         $this->maker = new Simple('https://example.com');
     }
 
-    public function test()
+    public function testMake()
     {
         $this->assertEquals(
             'https://example.com/width-100_test.jpg',

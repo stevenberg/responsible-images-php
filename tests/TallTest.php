@@ -21,8 +21,8 @@ class TallTest extends TestCase
     {
         $this->image = new Tall(
             Name::value('test.jpg'),
-            new Simple('https://example.com'),
-            ['gravity' => Gravity::value('center')]
+            ['gravity' => Gravity::value('center')],
+            new Simple('https://example.com')
         );
     }
 

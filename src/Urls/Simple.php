@@ -15,7 +15,7 @@ use StevenBerg\ResponsibleImages\Values\Name;
  * Assumes images have URLs like `https://example.com/width-100_image.jpg`
  * for the 100px version of image.jpg.
  */
-class Simple implements Maker
+class Simple extends Maker
 {
     private $urlPrefix;
 

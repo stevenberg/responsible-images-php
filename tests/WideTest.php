@@ -21,8 +21,8 @@ class WideTest extends TestCase
     {
         $this->image = new Wide(
             Name::value('test.jpg'),
-            new Simple('https://example.com'),
-            ['gravity' => Gravity::value('center')]
+            ['gravity' => Gravity::value('center')],
+            new Simple('https://example.com')
         );
     }
 
