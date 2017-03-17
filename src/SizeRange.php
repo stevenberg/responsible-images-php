@@ -40,18 +40,18 @@ class SizeRange
         }
     }
 
-    public function array(): array
+    public function toArray(): array
     {
         return iterator_to_array($this->sizes());
     }
 
     public function first(): Size
     {
-        return $this->array()[0];
+        return $this->toArray()[0];
     }
 
     public function last(): Size
     {
-        return array_reverse($this->array())[0];
+        return array_reverse($this->toArray())[0];
     }
 }

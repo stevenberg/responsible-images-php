@@ -41,7 +41,7 @@ class SizeRangeTest extends TestCase
 
     public function testArray()
     {
-        $this->assertEquals($this->expected, $this->range->array());
+        $this->assertEquals($this->expected, $this->range->toArray());
     }
 
     public function testFirst()
