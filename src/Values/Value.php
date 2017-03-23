@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @author Steven Berg <steven@stevenberg.net>
  * @copyright 2017 Steven Berg
@@ -75,7 +76,7 @@ abstract class Value
      */
     public function __toString(): string
     {
-        return $this->value;
+        return (string) $this->value;
     }
 
     /**
