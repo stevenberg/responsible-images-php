@@ -30,10 +30,6 @@ class Size extends Value
 
     /**
      * Add two Sizes and return the sum.
-     *
-     * @param self $other The other Size value to add.
-     *
-     * @return self The sum.
      */
     public function add(self $other): self
     {
@@ -45,10 +41,6 @@ class Size extends Value
      *
      * Returns `-1` if `$other` is greater than `$this`, `0` if equal,
      * `1` if less than.
-     *
-     * @param self $other The other Size value to compare to.
-     *
-     * @return int -1, 0 or 1
      */
     public function compare(self $other): int
     {
@@ -57,8 +49,6 @@ class Size extends Value
 
     /**
      * Return the value doubled.
-     *
-     * @return self The doubled value.
      */
     public function double(): self
     {
@@ -67,8 +57,6 @@ class Size extends Value
 
     /**
      * Return the value halved.
-     *
-     * @return self The halved value.
      */
     public function half(): self
     {

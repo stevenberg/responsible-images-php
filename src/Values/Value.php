@@ -18,16 +18,12 @@ abstract class Value
 {
     /**
      * Test whether the object's primitive value is valid.
-     *
-     * @return bool
      */
     abstract protected function isValid(): bool;
 
     /**
      * Return the message to be used when the constructor throws a
      * DomainException for an invalid value.
-     *
-     * @return string
      */
     abstract protected function invalidExceptionMesasge(): string;
 
@@ -59,8 +55,6 @@ abstract class Value
      * Return overloaded properties.
      *
      * - `value` is the underlying internal value.
-     *
-     * @return mixed
      */
     public function __get(string $name)
     {
@@ -71,8 +65,6 @@ abstract class Value
 
     /**
      * Convert the value to a string.
-     *
-     * @return string
      */
     public function __toString(): string
     {
@@ -88,8 +80,6 @@ abstract class Value
      * Create a new Value object or retrieve it from the cache.
      *
      * @param mixed $value The internal primitive value.
-     *
-     * @return self
      */
     public static function value($value): self
     {

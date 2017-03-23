@@ -36,9 +36,7 @@ class Image
     /**
      * Constructor.
      *
-     * @param Values\Name $name The image's name.
      * @param Values\Value[] $options Options to pass to the URL maker class.
-     * @param Urls\Maker The class to use to generate resized image URLs.
      */
     public function __construct(Name $name, array $options = [], Maker $maker = null)
     {
@@ -49,10 +47,6 @@ class Image
 
     /**
      * Return the URL for the image resized to the given width.
-     *
-     * @param Values\Size $size The requested image width.
-     *
-     * @return string The URL of the resized image.
      */
     public function source(Size $size): string
     {
@@ -61,10 +55,6 @@ class Image
 
     /**
      * Return the contents of a srcset attribute for the given range of widths.
-     *
-     * @param SizeRange $range The requested range of widths.
-     *
-     * @return string The srcset.
      */
     public function sourceSet(SizeRange $range): string
     {
@@ -77,11 +67,7 @@ class Image
     /**
      * Return a responsive HTML `img` tag for the image.
      *
-     * @param SizeRange $range The requested range of widths for the `srcset`.
-     * @param Values\Size $defaultSize The width to use for the `src`.
      * @param string[] $attributes List of attributes to add to the `img` tag.
-     *
-     * @return string The `img` tag.
      */
     public function tag(SizeRange $range, Size $defaultSize, array $attributes = []): string
     {
@@ -104,10 +90,6 @@ class Image
     /**
      * Return the list of options to pass to the URL maker class for an image of
      * the given width.
-     *
-     * @param Values\Size $size The requested image width.
-     *
-     * @return Values\Value[] The array of options.
      */
     protected function options(Size $size): array
     {
@@ -123,12 +105,7 @@ class Image
      * Return an `Image` object of the appropriate class based on
      * a `Shape` value.
      *
-     * @param Values\Shape $shape The requested image shape.
-     * @param Values\Name $name The image's name.
-     * @param Urls\Maker The class to use to generate resized image URLs.
      * @param Values\Value[] $options Options to pass to the URL maker class.
-     *
-     * @return self
      */
     public static function fromShape(
         Shape $shape,

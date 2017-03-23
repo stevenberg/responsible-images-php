@@ -22,8 +22,6 @@ class Simple extends Maker
 
     /**
      * Constructor.
-     *
-     * @param string $urlPrefix Value to prefix to generated URLs, e.g. `https://example.com`
      */
     public function __construct(string $urlPrefix)
     {

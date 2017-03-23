@@ -19,10 +19,7 @@ abstract class Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param \StevenBerg\ResponsibleImages\Values\Name $name The image name.
      * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the resizing service.
-     *
-     * @return string The URL of the resized image.
      */
     abstract public function make(Name $name, array $options): string;
 

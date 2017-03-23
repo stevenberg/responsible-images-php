@@ -35,10 +35,6 @@ class SizeRange
 
     /**
      * Constructor
-     *
-     * @param Values\Size $min The minimum value in the range.
-     * @param Values\Size $max The maximum value in the range.
-     * @param Values\Size $step The increment between values.
      */
     public function __construct(Size $min, Size $max, Size $step)
     {
@@ -53,12 +49,6 @@ class SizeRange
 
     /**
      * Make a new SizeRange from ints.
-     *
-     * @param int $min The minimum value in the range.
-     * @param int $max The maximum value in the range.
-     * @param int $step The increment between values.
-     *
-     * @return self
      */
     public static function from(int $min, int $max, int $step): self
     {
@@ -67,8 +57,6 @@ class SizeRange
 
     /**
      * Generator function for iterating over the range.
-     *
-     * @return \Generator
      */
     public function sizes(): Generator
     {
@@ -79,8 +67,6 @@ class SizeRange
 
     /**
      * Convert the range to an array.
-     *
-     * @return array
      */
     public function toArray(): array
     {
@@ -89,8 +75,6 @@ class SizeRange
 
     /**
      * Return the first value in the range.
-     *
-     * @return Values\Size
      */
     public function first(): Size
     {
@@ -99,8 +83,6 @@ class SizeRange
 
     /**
      * Return the last value in the range.
-     *
-     * @return Values\Size
      */
     public function last(): Size
     {
