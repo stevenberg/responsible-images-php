@@ -57,7 +57,7 @@ class Image extends Model
 
     public function getGravityAttribute($value)
     {
-        return Gravity::value($value);
+        return Gravity::from($value);
     }
 
     public function setGravityAttribute(Gravity $value)
@@ -67,7 +67,7 @@ class Image extends Model
 
     public function getNameAttribute($value)
     {
-        return Name::value($value);
+        return Name::from($value);
     }
 
     public function setNameAttribute(Name $value)
@@ -77,7 +77,7 @@ class Image extends Model
 
     public function getShapeAttribute($value)
     {
-        return Shape::value($value);
+        return Shape::from($value);
     }
 
     public function setShapeAttribute(Shape $value)

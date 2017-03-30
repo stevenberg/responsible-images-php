@@ -21,8 +21,8 @@ class TallTest extends TestCase
     protected function setUp()
     {
         $this->image = new Tall(
-            Name::value('test.jpg'),
-            ['gravity' => Gravity::value('center')],
+            Name::from('test.jpg'),
+            ['gravity' => Gravity::from('center')],
             new Simple('https://example.com')
         );
     }
@@ -31,7 +31,7 @@ class TallTest extends TestCase
     {
         $this->assertEquals(
             'https://example.com/width-100_height-200_gravity-center_test.jpg',
-            $this->image->source(Size::value(100))
+            $this->image->source(Size::from(100))
         );
     }
 

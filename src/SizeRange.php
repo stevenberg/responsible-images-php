@@ -52,7 +52,7 @@ class SizeRange
      */
     public static function from(int $min, int $max, int $step): self
     {
-        return new self(Size::value($min), Size::value($max), Size::value($step));
+        return new self(Size::from($min), Size::from($max), Size::from($step));
     }
 
     /**

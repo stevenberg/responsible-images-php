@@ -18,14 +18,14 @@ class GravityTest extends TestCase
     {
         $this->expectException(DomainException::class);
 
-        Gravity::value(1);
+        Gravity::from(1);
     }
 
     public function testInvalidStringValue()
     {
         $this->expectException(DomainException::class);
 
-        Gravity::value('invalid');
+        Gravity::from('invalid');
     }
 
     public function testValidValues()
@@ -33,7 +33,7 @@ class GravityTest extends TestCase
         $values = ['auto', 'center'];
 
         foreach ($values as $value) {
-            $shape = Gravity::value($value);
+            $shape = Gravity::from($value);
 
             $this->assertEquals($value, (string) $shape);
         }

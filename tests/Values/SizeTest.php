@@ -18,36 +18,36 @@ class SizeTest extends TestCase
     {
         $this->expectException(DomainException::class);
 
-        Size::value('invalid');
+        Size::from('invalid');
     }
 
     public function testZeroValue()
     {
         $this->expectException(DomainException::class);
 
-        Size::value(0);
+        Size::from(0);
     }
 
     public function testNegativeValue()
     {
         $this->expectException(DomainException::class);
 
-        Size::value(-1);
+        Size::from(-1);
     }
 
     public function testStringConversion()
     {
-        $size = Size::value(10);
+        $size = Size::from(10);
 
         $this->assertEquals('10', (string) $size);
     }
 
     public function testCompare()
     {
-        $size = Size::value(10);
-        $less = Size::value(9);
-        $equal = Size::value(10);
-        $greater = Size::value(11);
+        $size = Size::from(10);
+        $less = Size::from(9);
+        $equal = Size::from(10);
+        $greater = Size::from(11);
 
         $this->assertEquals(-1, $size->compare($greater));
         $this->assertEquals(0, $size->compare($equal));

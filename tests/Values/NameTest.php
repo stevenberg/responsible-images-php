@@ -18,7 +18,7 @@ class NameTest extends TestCase
     {
         $this->expectException(DomainException::class);
 
-        Name::value(1);
+        Name::from(1);
     }
 
     public function testValidStringValues()
@@ -35,7 +35,7 @@ class NameTest extends TestCase
         ];
 
         foreach ($values as $value) {
-            $name = Name::value($value);
+            $name = Name::from($value);
 
             $this->assertEquals($value, (string) $name);
         }
@@ -45,13 +45,13 @@ class NameTest extends TestCase
     {
         $this->expectException(DomainException::class);
 
-        Name::value('');
+        Name::from('');
     }
 
     public function testStringValueWithSpace()
     {
         $this->expectException(DomainException::class);
 
-        Name::value('foo bar');
+        Name::from('foo bar');
     }
 }

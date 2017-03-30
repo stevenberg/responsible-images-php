@@ -25,8 +25,8 @@ class SimpleTest extends TestCase
         $this->assertEquals(
             'https://example.com/width-100_test.jpg',
             $this->maker->make(
-                Name::value('test.jpg'),
-                ['width' => Size::value(100)]
+                Name::from('test.jpg'),
+                ['width' => Size::from(100)]
             )
         );
     }

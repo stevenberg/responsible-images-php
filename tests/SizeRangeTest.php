@@ -18,11 +18,11 @@ class SizeRangeTest extends TestCase
     {
         $this->range = SizeRange::from(1, 10, 2);
         $this->expected = [
-            Size::value(1),
-            Size::value(3),
-            Size::value(5),
-            Size::value(7),
-            Size::value(9),
+            Size::from(1),
+            Size::from(3),
+            Size::from(5),
+            Size::from(7),
+            Size::from(9),
         ];
     }
 
@@ -47,11 +47,11 @@ class SizeRangeTest extends TestCase
 
     public function testFirst()
     {
-        $this->assertEquals(Size::value(1), $this->range->first());
+        $this->assertEquals(Size::from(1), $this->range->first());
     }
 
     public function last()
     {
-        $this->assertEquals(Size::value(9), $this->range->last());
+        $this->assertEquals(Size::from(9), $this->range->last());
     }
 }

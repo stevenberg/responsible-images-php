@@ -81,7 +81,7 @@ abstract class Value
      *
      * @param mixed $value The internal primitive value.
      */
-    public static function value($value): self
+    public static function from($value): self
     {
         if (!isset(static::$values[static::class])) {
             static::$values[static::class] = new Map;

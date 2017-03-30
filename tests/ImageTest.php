@@ -25,8 +25,8 @@ class ImageTest extends TestCase
     protected function setUp()
     {
         $this->image = new Image(
-            Name::value('test.jpg'),
-            ['gravity' => Gravity::value('auto')],
+            Name::from('test.jpg'),
+            ['gravity' => Gravity::from('auto')],
             new Simple('https://example.com')
         );
     }
@@ -35,7 +35,7 @@ class ImageTest extends TestCase
     {
         $this->assertEquals(
             'https://example.com/width-100_test.jpg',
-            $this->image->source(Size::value(100))
+            $this->image->source(Size::from(100))
         );
     }
 
@@ -64,16 +64,16 @@ class ImageTest extends TestCase
         $expected = "<img alt='' sizes='100vw' src='https://example.com/width-100_test.jpg' srcset='https://example.com/width-100_test.jpg 100w, https://example.com/width-200_test.jpg 200w, https://example.com/width-300_test.jpg 300w, https://example.com/width-400_test.jpg 400w, https://example.com/width-500_test.jpg 500w, https://example.com/width-600_test.jpg 600w, https://example.com/width-700_test.jpg 700w, https://example.com/width-800_test.jpg 800w, https://example.com/width-900_test.jpg 900w, https://example.com/width-1000_test.jpg 1000w'>";
 
         $range = SizeRange::from(100, 1000, 100);
-        $defaultSize = Size::value(100);
+        $defaultSize = Size::from(100);
 
         $this->assertEquals($expected, $this->image->tag($range, $defaultSize));
     }
 
     public function testFromShape()
     {
-        $name = Name::value('test.jpg');
+        $name = Name::from('test.jpg');
         $maker = new Simple('https://exmaple.com');
-        $options = ['gravity' => Gravity::value('auto')];
+        $options = ['gravity' => Gravity::from('auto')];
 
         $values = [
             'original' => Image::class,
@@ -83,7 +83,7 @@ class ImageTest extends TestCase
         ];
 
         foreach ($values as $value => $class) {
-            $shape = Shape::value($value);
+            $shape = Shape::from($value);
 
             $this->assertInstanceOf($class, Image::fromShape($shape, $name, $options, $maker));
         }

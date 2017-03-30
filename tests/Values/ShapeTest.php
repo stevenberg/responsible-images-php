@@ -21,14 +21,14 @@ class ShapeTest extends TestCase
     {
         $this->expectException(DomainException::class);
 
-        Shape::value(1);
+        Shape::from(1);
     }
 
     public function testInvalidStringValue()
     {
         $this->expectException(DomainException::class);
 
-        Shape::value('invalid');
+        Shape::from('invalid');
     }
 
     public function testValidValues()
@@ -36,7 +36,7 @@ class ShapeTest extends TestCase
         $values = ['original', 'square', 'tall', 'wide'];
 
         foreach ($values as $value) {
-            $shape = Shape::value($value);
+            $shape = Shape::from($value);
 
             $this->assertEquals($value, (string) $shape);
         }
