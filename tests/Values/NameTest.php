@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 /**
  * @author Steven Berg <steven@stevenberg.net>
  * @copyright 2017 Steven Berg
@@ -8,7 +10,6 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Tests\Values;
 
-use DomainException;
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\Values\ExceptionalValue;
 use StevenBerg\ResponsibleImages\Values\Name;
