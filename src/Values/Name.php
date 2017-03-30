@@ -21,8 +21,7 @@ class Name extends Base
      */
     protected static function validate($value): bool
     {
-        return is_string($value) &&
-            preg_match('/^[\w-]+(\/[\w-]+)*(\.(jpg|png))?$/i', $value);
+        return is_string($value) && strlen($value) >= 1;
     }
 
     protected static function invalidReason(): string

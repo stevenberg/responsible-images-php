@@ -48,11 +48,4 @@ class NameTest extends TestCase
 
         $this->assertInstanceOf(ExceptionalValue::class, $name);
     }
-
-    public function testStringValueWithSpace()
-    {
-        $name = Name::from('foo bar');
-
-        $this->assertInstanceOf(ExceptionalValue::class, $name);
-    }
 }
