@@ -4,7 +4,7 @@ declare(strict_types=1);
 /**
  * @author Steven Berg <steven@stevenberg.net>
  * @copyright 2017 Steven Berg
- * @license GNU General Public License, version 3
+ * @license MIT
  */
 
 namespace StevenBerg\ResponsibleImages\Urls;

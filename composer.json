@@ -1,12 +1,12 @@
 {
     "name": "stevenberg/responsible-images",
     "type": "library",
-    "description": "A PHP for generating responsive image URLs and HTML tags",
+    "description": "A PHP library for generating responsive image URLs and HTML tags",
     "keywords": [
         "images",
         "responsive"
     ],
-    "license": "GPL-3.0",
+    "license": "MIT",
     "support": {
         "issues": "https://github.com/stevenberg/responsible-images-php/issues",
         "source": "https://github.com/stevenberg/responsible-images-php"
