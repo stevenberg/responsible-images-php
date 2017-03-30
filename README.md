@@ -62,7 +62,7 @@ class Image extends Model
 
     public function setGravityAttribute(Gravity $value)
     {
-        $this->attributes['gravity'] = $value->value;
+        $this->attributes['gravity'] = $value->value();
     }
 
     public function getNameAttribute($value)
@@ -72,7 +72,7 @@ class Image extends Model
 
     public function setNameAttribute(Name $value)
     {
-        $this->attributes['name'] = $value->value;
+        $this->attributes['name'] = $value->value();
     }
 
     public function getShapeAttribute($value)
@@ -82,7 +82,7 @@ class Image extends Model
 
     public function setShapeAttribute(Shape $value)
     {
-        $this->attributes['shape'] = $value->value;
+        $this->attributes['shape'] = $value->value();
     }
 
     public function getResponsiveImageAttribute()

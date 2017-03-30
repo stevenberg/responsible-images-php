@@ -19,9 +19,9 @@ class Wide extends Image
     protected function options(Size $size): array
     {
         return [
-            'width' => $size->value,
-            'height' => $size->half()->value,
-            'gravity' => $this->options['gravity']->value,
+            'width' => $size->value(),
+            'height' => $size->half()->value(),
+            'gravity' => $this->options['gravity']->value(),
         ];
     }
 }
