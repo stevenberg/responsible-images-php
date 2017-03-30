@@ -11,8 +11,8 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages\Tests;
 
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsibleImages\Values\ExceptionalValue;
 use StevenBerg\ResponsibleImages\Values\Size;
+use StevenBerg\WholesomeValues\ExceptionalValue;
 
 class SizeTest extends TestCase
 {

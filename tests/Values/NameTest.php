@@ -11,8 +11,8 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsibleImages\Values\ExceptionalValue;
 use StevenBerg\ResponsibleImages\Values\Name;
+use StevenBerg\WholesomeValues\ExceptionalValue;
 
 class NameTest extends TestCase
 {

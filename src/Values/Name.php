@@ -10,24 +10,20 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
+use StevenBerg\WholesomeValues\Base;
+
 /**
  * Represents an image name.
  */
 class Name extends Base
 {
-    /**
-     * {@inheritDoc}
-     *
-     * A name is valid if it matches the regular expression
-     * `/^[\w-]+(\/[\w-]+)*(\.(jpg|png))?$/i`.
-     */
     protected static function validate($value): bool
     {
-        return is_string($value) && strlen($value) >= 1;
+        return is_string($value) && strlen($value) > 0;
     }
 
     protected static function invalidReason(): string
     {
-        return 'Name value format must be string and valid format';
+        return 'must be string and of length > 0';
     }
 }

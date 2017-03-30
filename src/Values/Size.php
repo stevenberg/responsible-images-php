@@ -10,16 +10,13 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
+use StevenBerg\WholesomeValues\Base;
+
 /**
  * Represents an image dimension, width or height.
  */
 class Size extends Base
 {
-    /**
-     * {@inheritDoc}
-     *
-     * A size is valid if it's an integer greater than or equal to 1.
-     */
     protected static function validate($value): bool
     {
         return is_int($value) && $value >= 1;
@@ -27,7 +24,7 @@ class Size extends Base
 
     protected static function invalidReason(): string
     {
-        return 'Size value must be integer greater than or equal to 1';
+        return 'must be integer greater than or equal to 1';
     }
 
     /**

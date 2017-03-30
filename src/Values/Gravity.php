@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
+use StevenBerg\WholesomeValues\Base;
+
 /**
  * Represents the location of focus when an image is cropped.
  *
@@ -21,11 +23,6 @@ class Gravity extends Base
 {
     const VALUES = ['auto', 'center'];
 
-    /**
-     * {@inheritDoc}
-     *
-     * A gravity value is valid if it's one of `auto`, `center`.
-     */
     protected static function validate($value): bool
     {
         return is_string($value) && in_array($value, self::VALUES);
@@ -33,6 +30,6 @@ class Gravity extends Base
 
     protected static function invalidReason(): string
     {
-        return 'Gravity value must be one of ' . implode(', ', self::VALUES);
+        return 'must be one of ' . implode(', ', self::VALUES);
     }
 }

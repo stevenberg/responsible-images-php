@@ -13,6 +13,7 @@ namespace StevenBerg\ResponsibleImages\Values;
 use StevenBerg\ResponsibleImages\Square;
 use StevenBerg\ResponsibleImages\Tall;
 use StevenBerg\ResponsibleImages\Wide;
+use StevenBerg\WholesomeValues\Base;
 
 /**
  * Represents the shape of the resized images.
@@ -25,12 +26,6 @@ class Shape extends Base
 {
     const VALUES = ['original', 'square', 'tall', 'wide'];
 
-    /**
-     * {@inheritDoc}
-     *
-     * A shape value is valid if it's one of: `original`, `square`, `tall`,
-     * `wide`.
-     */
     protected static function validate($value): bool
     {
         return is_string($value) && in_array($value, self::VALUES);
@@ -38,6 +33,6 @@ class Shape extends Base
 
     protected static function invalidReason(): string
     {
-        return 'Shape value must be one of ' . implode(', ', self::VALUES);
+        return 'must be one of ' . implode(', ', self::VALUES);
     }
 }
