@@ -19,9 +19,9 @@ class Tall extends Image
     protected function options(Size $size): array
     {
         return [
-            'width' => $size->value(),
-            'height' => $size->double()->value(),
-            'gravity' => $this->options['gravity']->value(),
+            'width' => $size,
+            'height' => $size->double(),
+            'gravity' => $this->options['gravity'],
         ];
     }
 }

@@ -30,4 +30,18 @@ class SimpleTest extends TestCase
             )
         );
     }
+
+    public function testMakeWithExceptionalValues()
+    {
+        $this->assertEquals(
+            'https://example.com/height-100_test.jpg',
+            $this->maker->make(
+                Name::from('test.jpg'),
+                [
+                    'width' => Size::from(0),
+                    'height' => Size::from(100),
+                ]
+            )
+        );
+    }
 }

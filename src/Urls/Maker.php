@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Urls;
 
+use Ds\Map;
 use RuntimeException;
 use StevenBerg\ResponsibleImages\Values\Name;
 
@@ -21,7 +22,16 @@ abstract class Maker
      *
      * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the resizing service.
      */
-    abstract public function make(Name $name, array $options): string;
+    abstract protected function url(Name $name, Map $options): string;
+
+    public function make(Name $name, array $options): string
+    {
+        $options = (new Map($options))->filter(function ($key, $value) {
+            return !$value->isExceptional();
+        });
+
+        return $this->url($name, $options);
+    }
 
     private static $defaultMaker;
 

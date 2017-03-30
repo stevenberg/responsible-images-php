@@ -93,7 +93,7 @@ class Image
      */
     protected function options(Size $size): array
     {
-        return ['width' => $size->value()];
+        return ['width' => $size];
     }
 
     private function maker(): Maker

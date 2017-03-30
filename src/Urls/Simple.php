@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Urls;
 
+use Ds\Map;
 use StevenBerg\ResponsibleImages\Values\Name;
 
 /**
@@ -28,17 +29,17 @@ class Simple extends Maker
         $this->urlPrefix = $urlPrefix;
     }
 
-    public function make(Name $name, array $options): string
+    protected function url(Name $name, Map $options): string
     {
         return "$this->urlPrefix/" . $this->joinOptions($options) . "_$name";
     }
 
-    private function joinOptions(array $options)
+    private function joinOptions(Map $options)
     {
-        return implode('_', array_map(
-            function ($k, $v) { return "$k-$v"; },
-            array_keys($options),
-            array_values($options)
-        ));
+        return $options->pairs()
+            ->map(function ($pair) {
+                return "$pair->key-$pair->value";
+            })
+            ->join('_');
     }
 }
