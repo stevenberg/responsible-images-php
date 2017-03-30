@@ -35,7 +35,7 @@ class Simple extends Maker
         return "$this->urlPrefix/" . $this->joinOptions($options) . "_$name";
     }
 
-    private function joinOptions(Map $options)
+    private function joinOptions(Map $options): string
     {
         return $options->pairs()
             ->map(function ($pair) {

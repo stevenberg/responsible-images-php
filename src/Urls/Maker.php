@@ -37,12 +37,12 @@ abstract class Maker
 
     private static $defaultMaker;
 
-    public static function registerDefaultMaker(self $maker)
+    public static function registerDefaultMaker(self $maker): void
     {
         self::$defaultMaker = $maker;
     }
 
-    public static function defaultMaker()
+    public static function defaultMaker(): self
     {
         if (!isset(self::$defaultMaker)) {
             throw new RuntimeException('Default URL maker has not been registered');
