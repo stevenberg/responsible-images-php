@@ -48,4 +48,11 @@ class NameTest extends TestCase
 
         $this->assertInstanceOf(ExceptionalValue::class, $name);
     }
+
+    public function testFromName()
+    {
+        $name = Name::from('test');
+
+        $this->assertEquals($name, Name::from($name));
+    }
 }

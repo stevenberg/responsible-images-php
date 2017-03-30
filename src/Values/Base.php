@@ -77,10 +77,15 @@ abstract class Base implements Value
      */
     public static function from($value): Value
     {
-        if (!static::validate($value)) {
+        if (!is_a($value, static::class) && !static::validate($value)) {
             return new ExceptionalValue($value, static::invalidReason());
         }
 
+        return static::get($value);
+    }
+
+    protected static function get($value): Base
+    {
         if (!isset(static::$values[static::class])) {
             static::$values[static::class] = new Map;
         }
