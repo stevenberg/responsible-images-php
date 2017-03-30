@@ -10,15 +10,16 @@ namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use DomainException;
 use PHPUnit\Framework\TestCase;
+use StevenBerg\ResponsibleImages\Values\ExceptionalValue;
 use StevenBerg\ResponsibleImages\Values\Name;
 
 class NameTest extends TestCase
 {
     public function testNonStringValue()
     {
-        $this->expectException(DomainException::class);
+        $name = Name::from(1);
 
-        Name::from(1);
+        $this->assertInstanceOf(ExceptionalValue::class, $name);
     }
 
     public function testValidStringValues()
@@ -43,15 +44,15 @@ class NameTest extends TestCase
 
     public function testEmptyStringValue()
     {
-        $this->expectException(DomainException::class);
+        $name = Name::from('');
 
-        Name::from('');
+        $this->assertInstanceOf(ExceptionalValue::class, $name);
     }
 
     public function testStringValueWithSpace()
     {
-        $this->expectException(DomainException::class);
+        $name = Name::from('foo bar');
 
-        Name::from('foo bar');
+        $this->assertInstanceOf(ExceptionalValue::class, $name);
     }
 }

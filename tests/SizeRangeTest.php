@@ -28,9 +28,9 @@ class SizeRangeTest extends TestCase
 
     public function testInvalidValues()
     {
-        $this->expectException(\DomainException::class);
+        $range = SizeRange::from(10, 1, 1);
 
-        SizeRange::from(10, 1, 1);
+        $this->assertEquals([], $range->toArray());
     }
 
     public function testSizes()

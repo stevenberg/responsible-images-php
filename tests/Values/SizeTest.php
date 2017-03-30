@@ -10,29 +10,30 @@ namespace StevenBerg\ResponsibleImages\Tests;
 
 use DomainException;
 use PHPUnit\Framework\TestCase;
+use StevenBerg\ResponsibleImages\Values\ExceptionalValue;
 use StevenBerg\ResponsibleImages\Values\Size;
 
 class SizeTest extends TestCase
 {
     public function testNonIntValue()
     {
-        $this->expectException(DomainException::class);
+        $size = Size::from('invalid');
 
-        Size::from('invalid');
+        $this->assertInstanceOf(ExceptionalValue::class, $size);
     }
 
     public function testZeroValue()
     {
-        $this->expectException(DomainException::class);
+        $size = Size::from(0);
 
-        Size::from(0);
+        $this->assertInstanceOf(ExceptionalValue::class, $size);
     }
 
     public function testNegativeValue()
     {
-        $this->expectException(DomainException::class);
+        $size = Size::from(-1);
 
-        Size::from(-1);
+        $this->assertInstanceOf(ExceptionalValue::class, $size);
     }
 
     public function testStringConversion()

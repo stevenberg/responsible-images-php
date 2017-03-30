@@ -11,7 +11,7 @@ namespace StevenBerg\ResponsibleImages\Values;
 /**
  * Represents an image name.
  */
-class Name extends Value
+class Name extends Base
 {
     /**
      * {@inheritDoc}
@@ -19,13 +19,13 @@ class Name extends Value
      * A name is valid if it matches the regular expression
      * `/^[\w-]+(\/[\w-]+)*(\.(jpg|png))?$/i`.
      */
-    protected function isValid(): bool
+    protected static function validate($value): bool
     {
-        return is_string($this->value) &&
-            preg_match('/^[\w-]+(\/[\w-]+)*(\.(jpg|png))?$/i', $this->value);
+        return is_string($value) &&
+            preg_match('/^[\w-]+(\/[\w-]+)*(\.(jpg|png))?$/i', $value);
     }
 
-    protected function invalidExceptionMesasge(): string
+    protected static function invalidReason(): string
     {
         return 'Name value format must be string and valid format';
     }

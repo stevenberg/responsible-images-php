@@ -10,22 +10,23 @@ namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use DomainException;
 use PHPUnit\Framework\TestCase;
+use StevenBerg\ResponsibleImages\Values\ExceptionalValue;
 use StevenBerg\ResponsibleImages\Values\Gravity;
 
 class GravityTest extends TestCase
 {
     public function testNonStringValue()
     {
-        $this->expectException(DomainException::class);
+        $gravity = Gravity::from(1);
 
-        Gravity::from(1);
+        $this->assertInstanceOf(ExceptionalValue::class, $gravity);
     }
 
     public function testInvalidStringValue()
     {
-        $this->expectException(DomainException::class);
+        $gravity = Gravity::from('invalid');
 
-        Gravity::from('invalid');
+        $this->assertInstanceOf(ExceptionalValue::class, $gravity);
     }
 
     public function testValidValues()

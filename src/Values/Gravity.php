@@ -15,7 +15,7 @@ namespace StevenBerg\ResponsibleImages\Values;
  * smart cropping algorithm if available, otherwise it just
  * does the default.
  */
-class Gravity extends Value
+class Gravity extends Base
 {
     const VALUES = ['auto', 'center'];
 
@@ -24,12 +24,12 @@ class Gravity extends Value
      *
      * A gravity value is valid if it's one of `auto`, `center`.
      */
-    protected function isValid(): bool
+    protected static function validate($value): bool
     {
-        return is_string($this->value) && in_array($this->value, self::VALUES);
+        return is_string($value) && in_array($value, self::VALUES);
     }
 
-    protected function invalidExceptionMesasge(): string
+    protected static function invalidReason(): string
     {
         return 'Gravity value must be one of ' . implode(', ', self::VALUES);
     }

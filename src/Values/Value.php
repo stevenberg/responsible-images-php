@@ -8,82 +8,11 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use DomainException;
-use Ds\Map;
-
-/**
- * Abstract class for domain-model value types that wrap primitive values.
- */
-abstract class Value
+interface Value
 {
-    /**
-     * Test whether the object's primitive value is valid.
-     */
-    abstract protected function isValid(): bool;
+    public function isExceptional(): bool;
 
-    /**
-     * Return the message to be used when the constructor throws a
-     * DomainException for an invalid value.
-     */
-    abstract protected function invalidExceptionMesasge(): string;
+    public function value();
 
-    /**
-     * @var mixed The internal primitive value
-     */
-    protected $value;
-
-    /**
-     * Constructor.
-     *
-     * Value objects can't be instantiated directly with `new`. Instead, create
-     * new objects with the `value` static method.
-     *
-     * @param mixed $value The internal primitive value.
-     *
-     * @throws DomainException if the provided value is invalid.
-     */
-    protected function __construct($value)
-    {
-        $this->value = $value;
-
-        if (!$this->isValid()) {
-            throw new DomainException($this->invalidExceptionMesasge());
-        }
-    }
-
-    public function value()
-    {
-        return $this->value;
-    }
-
-    /**
-     * Convert the value to a string.
-     */
-    public function __toString(): string
-    {
-        return (string) $this->value;
-    }
-
-    /**
-     * @var \Ds\Map[] List of cached Value objects.
-     */
-    protected static $values;
-
-    /**
-     * Create a new Value object or retrieve it from the cache.
-     *
-     * @param mixed $value The internal primitive value.
-     */
-    public static function from($value): self
-    {
-        if (!isset(static::$values[static::class])) {
-            static::$values[static::class] = new Map;
-        }
-
-        if (!static::$values[static::class]->hasKey($value)) {
-            static::$values[static::class]->put($value, new static($value));
-        }
-
-        return static::$values[static::class]->get($value);
-    }
+    public function __toString(): string;
 }

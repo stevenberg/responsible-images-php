@@ -19,7 +19,7 @@ use StevenBerg\ResponsibleImages\Wide;
  * - `tall` is a rectangle twice as high as it is wide.
  * - `wide` is a rectangle twice as wide as it is high.
  */
-class Shape extends Value
+class Shape extends Base
 {
     const VALUES = ['original', 'square', 'tall', 'wide'];
 
@@ -29,12 +29,12 @@ class Shape extends Value
      * A shape value is valid if it's one of: `original`, `square`, `tall`,
      * `wide`.
      */
-    protected function isValid(): bool
+    protected static function validate($value): bool
     {
-        return is_string($this->value) && in_array($this->value, self::VALUES);
+        return is_string($value) && in_array($value, self::VALUES);
     }
 
-    protected function invalidExceptionMesasge(): string
+    protected static function invalidReason(): string
     {
         return 'Shape value must be one of ' . implode(', ', self::VALUES);
     }

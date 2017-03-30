@@ -38,10 +38,6 @@ class SizeRange
      */
     public function __construct(Size $min, Size $max, Size $step)
     {
-        if ($min->compare($max) >= 1) {
-            throw new DomainException('SizeRange min must be less than max');
-        }
-
         $this->min = $min;
         $this->max = $max;
         $this->step = $step;

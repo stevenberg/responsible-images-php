@@ -12,6 +12,7 @@ use DomainException;
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\Square;
 use StevenBerg\ResponsibleImages\Tall;
+use StevenBerg\ResponsibleImages\Values\ExceptionalValue;
 use StevenBerg\ResponsibleImages\Values\Shape;
 use StevenBerg\ResponsibleImages\Wide;
 
@@ -19,16 +20,16 @@ class ShapeTest extends TestCase
 {
     public function testNonStringValue()
     {
-        $this->expectException(DomainException::class);
+        $shape = Shape::from(1);
 
-        Shape::from(1);
+        $this->assertInstanceOf(ExceptionalValue::class, $shape);
     }
 
     public function testInvalidStringValue()
     {
-        $this->expectException(DomainException::class);
+        $shape = Shape::from('invalid');
 
-        Shape::from('invalid');
+        $this->assertInstanceOf(ExceptionalValue::class, $shape);
     }
 
     public function testValidValues()
