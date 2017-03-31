@@ -32,7 +32,7 @@ class Size extends Base
      */
     public function add(self $other): self
     {
-        return new self($this->value + $other->value);
+        return self::from($this->value + $other->value);
     }
 
     /**
@@ -51,7 +51,7 @@ class Size extends Base
      */
     public function double(): self
     {
-        return new self($this->value * 2);
+        return self::from($this->value * 2);
     }
 
     /**
@@ -59,6 +59,6 @@ class Size extends Base
      */
     public function half(): self
     {
-        return new self((int) ceil($this->value / 2));
+        return self::from((int) ceil($this->value / 2));
     }
 }
