@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Tests;
 
+use Ds\Vector;
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\SizeRange;
 use StevenBerg\ResponsibleImages\Values\Size;
@@ -45,6 +46,11 @@ class SizeRangeTest extends TestCase
     public function testArray()
     {
         $this->assertEquals($this->expected, $this->range->toArray());
+    }
+
+    public function testToVector()
+    {
+        $this->assertEquals(new Vector($this->expected), $this->range->toVector());
     }
 
     public function testFirst()

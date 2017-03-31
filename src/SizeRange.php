@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages;
 
+use Ds\Vector;
 use Generator;
 use StevenBerg\ResponsibleImages\Values\Size;
 
@@ -70,12 +71,17 @@ class SizeRange
         return iterator_to_array($this->sizes());
     }
 
+    public function toVector(): Vector
+    {
+        return new Vector($this->toArray());
+    }
+
     /**
      * Return the first value in the range.
      */
     public function first(): Size
     {
-        return $this->toArray()[0];
+        return $this->toVector()->first();
     }
 
     /**
@@ -83,6 +89,6 @@ class SizeRange
      */
     public function last(): Size
     {
-        return array_reverse($this->toArray())[0];
+        return $this->toVector()->last();
     }
 }

@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages;
 
+use Ds\Map;
+use Ds\Vector;
 use StevenBerg\ResponsibleImages\Urls\Maker;
 use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Shape;
@@ -43,7 +45,7 @@ class Image
     public function __construct(Name $name, array $options = [], Maker $maker = null)
     {
         $this->name = $name;
-        $this->options = $options;
+        $this->options = new Map($options);
         $this->maker = $maker;
     }
 
@@ -60,10 +62,11 @@ class Image
      */
     public function sourceSet(SizeRange $range): string
     {
-        return implode(', ', array_map(
-            function ($size) { return $this->source($size) . " {$size}w"; },
-            $range->toArray()
-        ));
+        return $range->toVector()
+            ->map(function ($size) {
+                return $this->source($size) . " {$size}w";
+            })
+            ->join(', ');
     }
 
     /**
@@ -73,18 +76,17 @@ class Image
      */
     public function tag(SizeRange $range, Size $defaultSize, array $attributes = []): string
     {
+        $attributes = new Map($attributes);
         $attributes['alt'] = $attributes['alt'] ?? '';
         $attributes['sizes'] = $attributes['sizes'] ?? '100vw';
         $attributes['src'] = $this->source($defaultSize);
         $attributes['srcset'] = $this->sourceSet($range);
 
-        ksort($attributes);
-
-        $attributeString = implode(' ', array_map(
-            function ($key, $value) { return "$key='$value'"; },
-            array_keys($attributes),
-            array_values($attributes)
-        ));
+        $attributeString = $attributes
+            ->ksorted()
+            ->map(function ($key, $value) { return "$key='$value'"; })
+            ->values()
+            ->join(' ');
 
         return "<img $attributeString>";
     }
