@@ -21,10 +21,10 @@
     "require": {
         "php": ">=7.0.0",
         "php-ds/php-ds": "1.1.*",
-        "stevenberg/wholesome-values": "0.2.*"
+        "stevenberg/wholesome-values": "1.0.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "6.0.*"
+        "phpunit/phpunit": "6.1.*"
     },
     "archive": {
         "exclude": ["/tests"]
