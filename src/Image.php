@@ -76,8 +76,8 @@ class Image
     public function tag(SizeRange $range, Size $defaultSize, array $attributes = []): string
     {
         $attributes = new Map($attributes);
-        $attributes['alt'] = $attributes['alt'] ?? '';
-        $attributes['sizes'] = $attributes['sizes'] ?? '100vw';
+        $attributes['alt'] = isset($attributes['alt']) ? $attributes['alt'] : '';
+        $attributes['sizes'] = isset($attributes['sizes']) ? $attributes['sizes'] : '100vw';
         $attributes['src'] = $this->source($defaultSize);
         $attributes['srcset'] = $this->sourceSet($range);
 
