@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages;
 
 use Ds\Map;
-use Ds\Vector;
 use StevenBerg\ResponsibleImages\Urls\Maker;
 use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Shape;
@@ -84,7 +83,9 @@ class Image
 
         $attributeString = $attributes
             ->ksorted()
-            ->map(function ($key, $value) { return "$key='$value'"; })
+            ->map(function ($key, $value) {
+                return "$key='$value'";
+            })
             ->values()
             ->join(' ');
 
@@ -115,17 +116,17 @@ class Image
         Shape $shape,
         Name $name,
         array $options = [],
-        Maker $maker = null): self
-    {
+        Maker $maker = null
+    ): self {
         switch ($shape) {
-        case 'square':
-             return new Square($name, $options, $maker);
-        case 'tall':
-            return new Tall($name, $options, $maker);
-        case 'wide':
-            return new Wide($name, $options, $maker);
-        default:
-            return new self($name, $options, $maker);
+            case 'square':
+                return new Square($name, $options, $maker);
+            case 'tall':
+                return new Tall($name, $options, $maker);
+            case 'wide':
+                return new Wide($name, $options, $maker);
+            default:
+                return new self($name, $options, $maker);
         }
     }
 }
