@@ -22,24 +22,24 @@ use StevenBerg\ResponsibleImages\Values\Size;
 class Image
 {
     /**
-     * @var Values\Name The image's name.
+     * @var Values\Name the image's name
      */
     protected $name;
 
     /**
-     * @var Values\Value[] Options to pass to the URL maker.
+     * @var Values\Value[] options to pass to the URL maker
      */
     protected $options;
 
     /**
-     * @var Maker The class to use to generate resized image URLs.
+     * @var Maker the class to use to generate resized image URLs
      */
     protected $maker;
 
     /**
      * Constructor.
      *
-     * @param Values\Value[] $options Options to pass to the URL maker class.
+     * @param Values\Value[] $options options to pass to the URL maker class
      */
     public function __construct(Name $name, array $options = [], Maker $maker = null)
     {
@@ -71,13 +71,13 @@ class Image
     /**
      * Return a responsive HTML `img` tag for the image.
      *
-     * @param string[] $attributes List of attributes to add to the `img` tag.
+     * @param string[] $attributes list of attributes to add to the `img` tag
      */
     public function tag(SizeRange $range, Size $defaultSize, array $attributes = []): string
     {
         $attributes = new Map($attributes);
-        $attributes['alt'] = isset($attributes['alt']) ? $attributes['alt'] : '';
-        $attributes['sizes'] = isset($attributes['sizes']) ? $attributes['sizes'] : '100vw';
+        $attributes['alt'] = $attributes['alt'] ?? '';
+        $attributes['sizes'] = $attributes['sizes'] ?? '100vw';
         $attributes['src'] = $this->source($defaultSize);
         $attributes['srcset'] = $this->sourceSet($range);
 
@@ -93,24 +93,10 @@ class Image
     }
 
     /**
-     * Return the list of options to pass to the URL maker class for an image of
-     * the given width.
-     */
-    protected function options(Size $size): array
-    {
-        return ['width' => $size];
-    }
-
-    private function maker(): Maker
-    {
-        return $this->maker ?? Maker::defaultMaker();
-    }
-
-    /**
      * Return an `Image` object of the appropriate class based on
      * a `Shape` value.
      *
-     * @param Values\Value[] $options Options to pass to the URL maker class.
+     * @param Values\Value[] $options options to pass to the URL maker class
      */
     public static function fromShape(
         Shape $shape,
@@ -128,5 +114,19 @@ class Image
             default:
                 return new self($name, $options, $maker);
         }
+    }
+
+    /**
+     * Return the list of options to pass to the URL maker class for an image of
+     * the given width.
+     */
+    protected function options(Size $size): array
+    {
+        return ['width' => $size];
+    }
+
+    private function maker(): Maker
+    {
+        return $this->maker ?? Maker::defaultMaker();
     }
 }

@@ -30,6 +30,9 @@ class Simple extends Maker
         $this->urlPrefix = $urlPrefix;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function url(Name $name, Map $options): string
     {
         return "$this->urlPrefix/" . $this->joinOptions($options) . "_$name";

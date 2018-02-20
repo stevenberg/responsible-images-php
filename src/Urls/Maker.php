@@ -19,13 +19,14 @@ use StevenBerg\ResponsibleImages\Values\Name;
  */
 abstract class Maker
 {
-    /**
-     * Return a URL for the given image name and options.
-     *
-     * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the resizing service.
-     */
-    abstract protected function url(Name $name, Map $options): string;
+    private static $defaultMaker;
 
+    /**
+     * Make a URL.
+     *
+     * @param \StevenBerg\ResponsibleImages\Values\Name             $name    Image name
+     * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the resizing service
+     */
     public function make(Name $name, array $options): string
     {
         $options = (new Map($options))->filter(function ($key, $value) {
@@ -35,13 +36,19 @@ abstract class Maker
         return $this->url($name, $options);
     }
 
-    private static $defaultMaker;
-
+    /**
+     * Register the default Maker object to use when one isn't specified.
+     *
+     * @param self $maker The default Maker object
+     */
     public static function registerDefaultMaker(self $maker): void
     {
         self::$defaultMaker = $maker;
     }
 
+    /**
+     * Return the default Maker object.
+     */
     public static function defaultMaker(): self
     {
         if (!isset(self::$defaultMaker)) {
@@ -50,4 +57,11 @@ abstract class Maker
 
         return self::$defaultMaker;
     }
+
+    /**
+     * Return a URL for the given image name and options.
+     *
+     * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the resizing service
+     */
+    abstract protected function url(Name $name, Map $options): string;
 }

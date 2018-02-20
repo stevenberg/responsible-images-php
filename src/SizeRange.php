@@ -21,22 +21,22 @@ use StevenBerg\ResponsibleImages\Values\Size;
 class SizeRange
 {
     /**
-     * @var Values\Size The minimum value in the range.
+     * @var Values\Size the minimum value in the range
      */
     private $min;
 
     /**
-     * @var Values\Size The maximum value in the range.
+     * @var Values\Size the maximum value in the range
      */
     private $max;
 
     /**
-     * @var Values\Size The increment between each value.
+     * @var Values\Size the increment between each value
      */
     private $step;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct(Size $min, Size $max, Size $step)
     {

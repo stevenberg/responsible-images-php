@@ -17,16 +17,6 @@ use StevenBerg\WholesomeValues\Base;
  */
 class Size extends Base
 {
-    protected static function validate($value): bool
-    {
-        return is_int($value) && $value >= 1;
-    }
-
-    protected static function invalidReason(): string
-    {
-        return 'must be integer greater than or equal to 1';
-    }
-
     /**
      * Add two Sizes and return the sum.
      */
@@ -60,5 +50,15 @@ class Size extends Base
     public function half(): self
     {
         return self::from((int) ceil($this->value / 2));
+    }
+
+    protected static function validate($value): bool
+    {
+        return is_int($value) && $value >= 1;
+    }
+
+    protected static function invalidReason(): string
+    {
+        return 'must be integer greater than or equal to 1';
     }
 }
