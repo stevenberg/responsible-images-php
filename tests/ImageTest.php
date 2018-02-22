@@ -33,6 +33,11 @@ class ImageTest extends TestCase
         );
     }
 
+    public function testToResponsiveImage()
+    {
+        $this->assertSame($this->image, $this->image->toResponsiveImage());
+    }
+
     public function testSource()
     {
         $this->assertEquals(

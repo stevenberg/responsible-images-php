@@ -19,7 +19,7 @@ use StevenBerg\ResponsibleImages\Values\Size;
 /**
  * Represents a responsive image.
  */
-class Image
+class Image implements ResponsiveImageable
 {
     /**
      * @var Values\Name the image's name
@@ -46,6 +46,14 @@ class Image
         $this->name = $name;
         $this->options = new Map($options);
         $this->maker = $maker;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toResponsiveImage(): self
+    {
+        return $this;
     }
 
     /**
