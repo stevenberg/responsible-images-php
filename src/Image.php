@@ -128,9 +128,9 @@ class Image implements ResponsiveImageable
      * Return the list of options to pass to the URL maker class for an image of
      * the given width.
      */
-    protected function options(Size $size): array
+    protected function options(Size $size): Map
     {
-        return ['width' => $size];
+        return $this->options->merge(['width' => $size]);
     }
 
     private function maker(): Maker

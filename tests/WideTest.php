@@ -32,7 +32,7 @@ class WideTest extends TestCase
     public function testSource()
     {
         $this->assertEquals(
-            'https://example.com/width-100_height-50_gravity-center_test.jpg',
+            'https://example.com/gravity-center_height-50_width-100_test.jpg',
             $this->image->source(Size::from(100))
         );
     }
@@ -40,16 +40,16 @@ class WideTest extends TestCase
     public function testSourceSet()
     {
         $expected = implode(', ', [
-            'https://example.com/width-100_height-50_gravity-center_test.jpg 100w',
-            'https://example.com/width-200_height-100_gravity-center_test.jpg 200w',
-            'https://example.com/width-300_height-150_gravity-center_test.jpg 300w',
-            'https://example.com/width-400_height-200_gravity-center_test.jpg 400w',
-            'https://example.com/width-500_height-250_gravity-center_test.jpg 500w',
-            'https://example.com/width-600_height-300_gravity-center_test.jpg 600w',
-            'https://example.com/width-700_height-350_gravity-center_test.jpg 700w',
-            'https://example.com/width-800_height-400_gravity-center_test.jpg 800w',
-            'https://example.com/width-900_height-450_gravity-center_test.jpg 900w',
-            'https://example.com/width-1000_height-500_gravity-center_test.jpg 1000w',
+            'https://example.com/gravity-center_height-50_width-100_test.jpg 100w',
+            'https://example.com/gravity-center_height-100_width-200_test.jpg 200w',
+            'https://example.com/gravity-center_height-150_width-300_test.jpg 300w',
+            'https://example.com/gravity-center_height-200_width-400_test.jpg 400w',
+            'https://example.com/gravity-center_height-250_width-500_test.jpg 500w',
+            'https://example.com/gravity-center_height-300_width-600_test.jpg 600w',
+            'https://example.com/gravity-center_height-350_width-700_test.jpg 700w',
+            'https://example.com/gravity-center_height-400_width-800_test.jpg 800w',
+            'https://example.com/gravity-center_height-450_width-900_test.jpg 900w',
+            'https://example.com/gravity-center_height-500_width-1000_test.jpg 1000w',
         ]);
 
         $range = SizeRange::from(100, 1000, 100);

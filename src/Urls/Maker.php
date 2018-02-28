@@ -27,11 +27,13 @@ abstract class Maker
      * @param \StevenBerg\ResponsibleImages\Values\Name             $name    Image name
      * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the resizing service
      */
-    public function make(Name $name, array $options): string
+    public function make(Name $name, Map $options): string
     {
-        $options = (new Map($options))->filter(function ($key, $value) {
-            return !$value->isExceptional();
-        });
+        $options = $options
+            ->filter(function ($key, $value) {
+                return !$value->isExceptional();
+            })
+            ->ksorted();
 
         return $this->url($name, $options);
     }

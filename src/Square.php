@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages;
 
+use Ds\Map;
 use StevenBerg\ResponsibleImages\Values\Gravity;
 use StevenBerg\ResponsibleImages\Values\Size;
 
@@ -18,12 +19,11 @@ use StevenBerg\ResponsibleImages\Values\Size;
  */
 class Square extends Image
 {
-    protected function options(Size $size): array
+    protected function options(Size $size): Map
     {
-        return [
+        return parent::options($size)->merge([
             'width' => $size,
             'height' => $size,
-            'gravity' => $this->options['gravity'],
-        ];
+        ]);
     }
 }

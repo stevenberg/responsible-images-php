@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Tests\Urls;
 
+use Ds\Map;
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\Urls\Simple;
 use StevenBerg\ResponsibleImages\Values\Name;
@@ -28,7 +29,7 @@ class SimpleTest extends TestCase
             'https://example.com/width-100_test.jpg',
             $this->maker->make(
                 Name::from('test.jpg'),
-                ['width' => Size::from(100)]
+                new Map(['width' => Size::from(100)])
             )
         );
     }
@@ -39,10 +40,10 @@ class SimpleTest extends TestCase
             'https://example.com/height-100_test.jpg',
             $this->maker->make(
                 Name::from('test.jpg'),
-                [
+                new Map([
                     'width' => Size::from(0),
                     'height' => Size::from(100),
-                ]
+                ])
             )
         );
     }
