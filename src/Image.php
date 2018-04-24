@@ -91,8 +91,8 @@ class Image implements ResponsiveImageable
 
         $attributeString = $attributes
             ->ksorted()
-            ->map(function ($key, $value) {
-                return "$key='$value'";
+            ->map(function (string $key, $value): string {
+                return "$key='" . htmlspecialchars($value, ENT_QUOTES) . "'";
             })
             ->values()
             ->join(' ');
