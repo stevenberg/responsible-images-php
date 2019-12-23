@@ -20,8 +20,8 @@
   ],
   "require": {
     "php": "^7.1",
-    "php-ds/php-ds": "^1.0",
-    "stevenberg/wholesome-values": "^1.0"
+    "myclabs/php-enum": "^1.7",
+    "php-ds/php-ds": "^1.0"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.16",

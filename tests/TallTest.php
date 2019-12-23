@@ -15,7 +15,6 @@ use StevenBerg\ResponsibleImages\SizeRange;
 use StevenBerg\ResponsibleImages\Tall;
 use StevenBerg\ResponsibleImages\Urls\Simple;
 use StevenBerg\ResponsibleImages\Values\Gravity;
-use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Size;
 
 class TallTest extends TestCase
@@ -23,8 +22,8 @@ class TallTest extends TestCase
     protected function setUp(): void
     {
         $this->image = new Tall(
-            Name::from('test.jpg'),
-            ['gravity' => Gravity::from('center')],
+            'test.jpg',
+            ['gravity' => Gravity::Center()],
             new Simple('https://example.com')
         );
     }

@@ -15,7 +15,6 @@ use StevenBerg\ResponsibleImages\SizeRange;
 use StevenBerg\ResponsibleImages\Square;
 use StevenBerg\ResponsibleImages\Urls\Simple;
 use StevenBerg\ResponsibleImages\Values\Gravity;
-use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Size;
 
 class SquareTest extends TestCase
@@ -23,8 +22,8 @@ class SquareTest extends TestCase
     protected function setUp(): void
     {
         $this->image = new Square(
-            Name::from('test.jpg'),
-            ['gravity' => Gravity::from('center')],
+            'test.jpg',
+            ['gravity' => Gravity::Center()],
             new Simple('https://example.com')
         );
     }

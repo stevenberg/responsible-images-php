@@ -12,29 +12,29 @@ namespace StevenBerg\ResponsibleImages\Tests;
 
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\Values\Size;
-use StevenBerg\WholesomeValues\ExceptionalValue;
+use TypeError;
 
 class SizeTest extends TestCase
 {
     public function testNonIntValue()
     {
-        $size = Size::from('invalid');
+        $this->expectException(TypeError::class);
 
-        $this->assertInstanceOf(ExceptionalValue::class, $size);
+        $size = Size::from('invalid');
     }
 
     public function testZeroValue()
     {
-        $size = Size::from(0);
+        $this->expectException(TypeError::class);
 
-        $this->assertInstanceOf(ExceptionalValue::class, $size);
+        $size = Size::from(0);
     }
 
     public function testNegativeValue()
     {
-        $size = Size::from(-1);
+        $this->expectException(TypeError::class);
 
-        $this->assertInstanceOf(ExceptionalValue::class, $size);
+        $size = Size::from(-1);
     }
 
     public function testStringConversion()

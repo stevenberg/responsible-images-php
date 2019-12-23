@@ -10,9 +10,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use StevenBerg\ResponsibleImages\Tall;
-use StevenBerg\ResponsibleImages\Wide;
-use StevenBerg\WholesomeValues\Base;
+use MyCLabs\Enum\Enum;
 
 /**
  * Represents the shape of the resized images.
@@ -21,17 +19,10 @@ use StevenBerg\WholesomeValues\Base;
  * - `tall` is a rectangle twice as high as it is wide.
  * - `wide` is a rectangle twice as wide as it is high.
  */
-class Shape extends Base
+class Shape extends Enum
 {
-    const VALUES = ['original', 'square', 'tall', 'wide'];
-
-    protected static function validate($value): bool
-    {
-        return is_string($value) && in_array($value, self::VALUES);
-    }
-
-    protected static function invalidReason(): string
-    {
-        return 'must be one of ' . implode(', ', self::VALUES);
-    }
+    private const Original = 'origional';
+    private const Square = 'square';
+    private const Tall = 'tall';
+    private const Wide = 'wide';
 }

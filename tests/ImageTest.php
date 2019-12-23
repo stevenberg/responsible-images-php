@@ -17,7 +17,6 @@ use StevenBerg\ResponsibleImages\Square;
 use StevenBerg\ResponsibleImages\Tall;
 use StevenBerg\ResponsibleImages\Urls\Simple;
 use StevenBerg\ResponsibleImages\Values\Gravity;
-use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Shape;
 use StevenBerg\ResponsibleImages\Values\Size;
 use StevenBerg\ResponsibleImages\Wide;
@@ -27,8 +26,8 @@ class ImageTest extends TestCase
     protected function setUp(): void
     {
         $this->image = new Image(
-            Name::from('test.jpg'),
-            ['gravity' => Gravity::from('auto')],
+            'test.jpg',
+            ['gravity' => Gravity::Auto()],
             new Simple('https://example.com')
         );
     }
@@ -79,20 +78,18 @@ class ImageTest extends TestCase
 
     public function testFromShape()
     {
-        $name = Name::from('test.jpg');
+        $name = 'test.jpg';
         $maker = new Simple('https://exmaple.com');
-        $options = ['gravity' => Gravity::from('auto')];
+        $options = ['gravity' => Gravity::Auto()];
 
         $values = [
-            'original' => Image::class,
-            'square' => Square::class,
-            'tall' => Tall::class,
-            'wide' => Wide::class,
+            [Shape::Original(), Image::class],
+            [Shape::Square(), Square::class],
+            [Shape::Tall(), Tall::class],
+            [Shape::Wide(), Wide::class],
         ];
 
-        foreach ($values as $value => $class) {
-            $shape = Shape::from($value);
-
+        foreach ($values as [$shape, $class]) {
             $this->assertInstanceOf($class, Image::fromShape($shape, $name, $options, $maker));
         }
     }

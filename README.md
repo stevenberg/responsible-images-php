@@ -48,7 +48,6 @@ use Illuminate\Database\Eloquent\Model;
 use StevenBerg\ResponsibleImages\Image as ResponsibleImage;
 use StevenBerg\ResponsibleImages\Urls\Cloudinary;
 use StevenBerg\ResponsibleImages\Values\Gravity;
-use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Shape;
 
 class Image extends Model
@@ -57,32 +56,22 @@ class Image extends Model
 
     public function getGravityAttribute($value)
     {
-        return Gravity::from($value);
+        return new Gravity($value);
     }
 
     public function setGravityAttribute(Gravity $value)
     {
-        $this->attributes['gravity'] = $value->value();
-    }
-
-    public function getNameAttribute($value)
-    {
-        return Name::from($value);
-    }
-
-    public function setNameAttribute(Name $value)
-    {
-        $this->attributes['name'] = $value->value();
+        $this->attributes['gravity'] = $value->getValue();
     }
 
     public function getShapeAttribute($value)
     {
-        return Shape::from($value);
+        return new Shape($value);
     }
 
     public function setShapeAttribute(Shape $value)
     {
-        $this->attributes['shape'] = $value->value();
+        $this->attributes['shape'] = $value->getValue();
     }
 
     public function getResponsiveImageAttribute()

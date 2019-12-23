@@ -13,7 +13,6 @@ namespace StevenBerg\ResponsibleImages\Tests\Urls;
 use Ds\Map;
 use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\Urls\Simple;
-use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Size;
 
 class SimpleTest extends TestCase
@@ -28,22 +27,8 @@ class SimpleTest extends TestCase
         $this->assertEquals(
             'https://example.com/width-100_test.jpg',
             $this->maker->make(
-                Name::from('test.jpg'),
+                'test.jpg',
                 new Map(['width' => Size::from(100)])
-            )
-        );
-    }
-
-    public function testMakeWithExceptionalValues()
-    {
-        $this->assertEquals(
-            'https://example.com/height-100_test.jpg',
-            $this->maker->make(
-                Name::from('test.jpg'),
-                new Map([
-                    'width' => Size::from(0),
-                    'height' => Size::from(100),
-                ])
             )
         );
     }

@@ -14,7 +14,6 @@ use PHPUnit\Framework\TestCase;
 use StevenBerg\ResponsibleImages\SizeRange;
 use StevenBerg\ResponsibleImages\Urls\Simple;
 use StevenBerg\ResponsibleImages\Values\Gravity;
-use StevenBerg\ResponsibleImages\Values\Name;
 use StevenBerg\ResponsibleImages\Values\Size;
 use StevenBerg\ResponsibleImages\Wide;
 
@@ -23,8 +22,8 @@ class WideTest extends TestCase
     protected function setUp(): void
     {
         $this->image = new Wide(
-            Name::from('test.jpg'),
-            ['gravity' => Gravity::from('center')],
+            'test.jpg',
+            ['gravity' => Gravity::Center()],
             new Simple('https://example.com')
         );
     }

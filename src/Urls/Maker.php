@@ -12,7 +12,6 @@ namespace StevenBerg\ResponsibleImages\Urls;
 
 use Ds\Map;
 use RuntimeException;
-use StevenBerg\ResponsibleImages\Values\Name;
 
 /**
  * Interface for classes that generate resized image URLs.
@@ -24,19 +23,12 @@ abstract class Maker
     /**
      * Make a URL.
      *
-     * @param \StevenBerg\ResponsibleImages\Values\Name             $name    Image name
-     * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the resizing service
+     * @param string  $name    Image name
+     * @param mixed[] $options Options to pass to the resizing service
      */
-    public function make(Name $name, Map $options): string
+    public function make(string $name, Map $options): string
     {
-        $options = $options
-            ->filter(function ($key, $value) {
-                return !$value->isExceptional();
-            })
-            ->ksorted()
-        ;
-
-        return $this->url($name, $options);
+        return $this->url($name, $options->ksorted());
     }
 
     /**
@@ -64,7 +56,7 @@ abstract class Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param (\StevenBerg\ResponsibleImages\Values\Value|string)[] $options Options to pass to the resizing service
+     * @param mixed[] $options Options to pass to the resizing service
      */
-    abstract protected function url(Name $name, Map $options): string;
+    abstract protected function url(string $name, Map $options): string;
 }

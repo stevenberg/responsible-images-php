@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use StevenBerg\WholesomeValues\Base;
+use MyCLabs\Enum\Enum;
 
 /**
  * Represents the location of focus when an image is cropped.
@@ -19,17 +19,8 @@ use StevenBerg\WholesomeValues\Base;
  * smart cropping algorithm if available, otherwise it just
  * does the default.
  */
-class Gravity extends Base
+class Gravity extends Enum
 {
-    const VALUES = ['auto', 'center'];
-
-    protected static function validate($value): bool
-    {
-        return is_string($value) && in_array($value, self::VALUES);
-    }
-
-    protected static function invalidReason(): string
-    {
-        return 'must be one of ' . implode(', ', self::VALUES);
-    }
+    private const Auto = 'auto';
+    private const Center = 'center';
 }

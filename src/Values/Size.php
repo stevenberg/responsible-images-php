@@ -10,13 +10,34 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use StevenBerg\WholesomeValues\Base;
+use TypeError;
 
 /**
  * Represents an image dimension, width or height.
  */
-class Size extends Base
+class Size
 {
+    private $value;
+
+    public function __construct(int $value)
+    {
+        if ($value <= 0) {
+            throw new TypeError('Argument 1 passed to StevenBerg\ResponsibleImages\Values\Size::__construct must be > 0');
+        }
+
+        $this->value = $value;
+    }
+
+    public function __toString(): string
+    {
+        return strval($this->value);
+    }
+
+    public static function from(int $value): self
+    {
+        return new self($value);
+    }
+
     /**
      * Add two Sizes and return the sum.
      */
@@ -50,15 +71,5 @@ class Size extends Base
     public function half(): self
     {
         return self::from((int) ceil($this->value / 2));
-    }
-
-    protected static function validate($value): bool
-    {
-        return is_int($value) && $value >= 1;
-    }
-
-    protected static function invalidReason(): string
-    {
-        return 'must be integer greater than or equal to 1';
     }
 }

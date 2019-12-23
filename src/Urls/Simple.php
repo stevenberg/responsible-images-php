@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages\Urls;
 
 use Ds\Map;
-use StevenBerg\ResponsibleImages\Values\Name;
 
 /**
  * Simple URL maker, mainly for testing.
@@ -33,7 +32,7 @@ class Simple extends Maker
     /**
      * {@inheritdoc}
      */
-    protected function url(Name $name, Map $options): string
+    protected function url(string $name, Map $options): string
     {
         return "{$this->urlPrefix}/" . $this->joinOptions($options) . "_{$name}";
     }
