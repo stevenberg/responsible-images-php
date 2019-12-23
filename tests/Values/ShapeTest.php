@@ -11,10 +11,7 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages\Tests\Values;
 
 use PHPUnit\Framework\TestCase;
-use StevenBerg\ResponsibleImages\Square;
-use StevenBerg\ResponsibleImages\Tall;
 use StevenBerg\ResponsibleImages\Values\Shape;
-use StevenBerg\ResponsibleImages\Wide;
 use StevenBerg\WholesomeValues\ExceptionalValue;
 
 class ShapeTest extends TestCase

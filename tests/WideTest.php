@@ -20,7 +20,7 @@ use StevenBerg\ResponsibleImages\Wide;
 
 class WideTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->image = new Wide(
             Name::from('test.jpg'),

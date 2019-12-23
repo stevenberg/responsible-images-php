@@ -73,7 +73,8 @@ class Image implements ResponsiveImageable
             ->map(function ($size) {
                 return $this->source($size) . " {$size}w";
             })
-            ->join(', ');
+            ->join(', ')
+        ;
     }
 
     /**
@@ -92,12 +93,13 @@ class Image implements ResponsiveImageable
         $attributeString = $attributes
             ->ksorted()
             ->map(function (string $key, $value): string {
-                return "$key='" . htmlspecialchars($value, ENT_QUOTES) . "'";
+                return "{$key}='" . htmlspecialchars($value, ENT_QUOTES) . "'";
             })
             ->values()
-            ->join(' ');
+            ->join(' ')
+        ;
 
-        return "<img $attributeString>";
+        return "<img {$attributeString}>";
     }
 
     /**

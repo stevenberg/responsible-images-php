@@ -35,15 +35,16 @@ class Simple extends Maker
      */
     protected function url(Name $name, Map $options): string
     {
-        return "$this->urlPrefix/" . $this->joinOptions($options) . "_$name";
+        return "{$this->urlPrefix}/" . $this->joinOptions($options) . "_{$name}";
     }
 
     private function joinOptions(Map $options): string
     {
         return $options->pairs()
             ->map(function ($pair) {
-                return "$pair->key-$pair->value";
+                return "{$pair->key}-{$pair->value}";
             })
-            ->join('_');
+            ->join('_')
+        ;
     }
 }

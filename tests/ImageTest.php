@@ -24,7 +24,7 @@ use StevenBerg\ResponsibleImages\Wide;
 
 class ImageTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->image = new Image(
             Name::from('test.jpg'),

@@ -17,7 +17,7 @@ use StevenBerg\ResponsibleImages\Values\Size;
 
 class SizeRangeTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->range = SizeRange::from(1, 10, 2);
         $this->expected = [

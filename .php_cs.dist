@@ -4,34 +4,25 @@ $finder = PhpCsFixer\Finder::create()->in(__DIR__);
 
 return PhpCsFixer\Config::create()
     ->setRules([
-        '@PSR1' => true,
-        '@PSR2' => true,
-        '@PHP71Migration' => true,
-        '@Symfony' => true,
-        'array_syntax' => [
-            'syntax' => 'short',
-        ],
-        'combine_consecutive_issets' => true,
-        'combine_consecutive_unsets' => true,
+        '@PHP73Migration' => true,
+        '@PhpCsFixer' => true,
         'concat_space' => [
             'spacing' => 'one',
         ],
-        'heredoc_to_nowdoc' => true,
-        'is_null' => false,
-        'linebreak_after_opening_tag' => true,
         'list_syntax' => [
             'syntax' => 'short',
         ],
         'mb_str_functions' => true,
-        'new_with_braces' => false,
-        'no_php4_constructor' => true,
-        'no_useless_else' => true,
-        'no_useless_return' => true,
-        'ordered_class_elements' => true,
-        'ordered_imports' => true,
-        'phpdoc_order' => true,
-        'silenced_deprecation_error' => false,
-        'single_line_comment_style' => true,
+        'ordered_imports' => [
+            'imports_order' => [
+                'class',
+                'const',
+                'function',
+            ],
+        ],
+        'phpdoc_add_missing_param_annotation' => false,
+        'php_unit_internal_class' => false,
+        'php_unit_test_class_requires_covers' => false,
         'yoda_style' => false,
     ])
     ->setRiskyAllowed(true)

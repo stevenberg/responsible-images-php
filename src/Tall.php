@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages;
 
 use Ds\Map;
-use StevenBerg\ResponsibleImages\Values\Gravity;
 use StevenBerg\ResponsibleImages\Values\Size;
 
 /**

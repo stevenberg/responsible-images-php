@@ -20,7 +20,7 @@ use StevenBerg\ResponsibleImages\Values\Size;
 
 class TallTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->image = new Tall(
             Name::from('test.jpg'),

@@ -33,7 +33,8 @@ abstract class Maker
             ->filter(function ($key, $value) {
                 return !$value->isExceptional();
             })
-            ->ksorted();
+            ->ksorted()
+        ;
 
         return $this->url($name, $options);
     }

@@ -10,7 +10,6 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use StevenBerg\ResponsibleImages\Square;
 use StevenBerg\ResponsibleImages\Tall;
 use StevenBerg\ResponsibleImages\Wide;
 use StevenBerg\WholesomeValues\Base;
