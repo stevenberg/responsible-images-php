@@ -38,6 +38,11 @@ class Size
         return new self($value);
     }
 
+    public function getValue(): int
+    {
+        return $this->value;
+    }
+
     /**
      * Add two Sizes and return the sum.
      */

@@ -55,4 +55,11 @@ class SizeTest extends TestCase
         $this->assertEquals(0, $size->compare($equal));
         $this->assertEquals(1, $size->compare($less));
     }
+
+    public function testGetValue()
+    {
+        $size = Size::from(1);
+
+        $this->assertSame(1, $size->getValue());
+    }
 }
