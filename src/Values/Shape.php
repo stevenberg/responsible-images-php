@@ -21,7 +21,7 @@ use MyCLabs\Enum\Enum;
  */
 class Shape extends Enum
 {
-    private const Original = 'origional';
+    private const Original = 'original';
     private const Square = 'square';
     private const Tall = 'tall';
     private const Wide = 'wide';
