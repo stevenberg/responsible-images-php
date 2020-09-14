@@ -27,7 +27,8 @@
     "friendsofphp/php-cs-fixer": "^2.16",
     "nunomaduro/collision": "^5.0",
     "phpunit/phpunit": "^9.0",
-    "psy/psysh": "^0.10.4"
+    "psy/psysh": "^0.10.4",
+    "roave/security-advisories": "dev-master"
   },
   "autoload": {
     "psr-4": {
