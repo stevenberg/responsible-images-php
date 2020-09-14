@@ -1,8 +1,6 @@
-<phpunit
-    bootstrap="vendor/autoload.php"
-    colors="true">
+<phpunit colors="true" printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer">
   <testsuites>
-    <testsuite>
+    <testsuite name="Tests">
       <directory>tests</directory>
     </testsuite>
   </testsuites>
