@@ -1,4 +1,7 @@
-<phpunit colors="true" printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer">
+<phpunit
+  colors="true"
+  printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer"
+>
   <testsuites>
     <testsuite name="Tests">
       <directory>tests</directory>

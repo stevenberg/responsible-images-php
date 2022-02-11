@@ -1,2 +1,10 @@
+/.pnp.*
+/.yarn/*
+!/.yarn/patches
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+!/.yarn/versions
 /composer.lock
+/node_modules
 /vendor
