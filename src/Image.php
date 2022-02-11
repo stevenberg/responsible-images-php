@@ -84,8 +84,8 @@ class Image implements ResponsiveImageable
     public function tag(SizeRange $range, Size $defaultSize, array $attributes = []): string
     {
         $attributes = new Map($attributes);
-        $attributes['alt'] = $attributes['alt'] ?? '';
-        $attributes['sizes'] = $attributes['sizes'] ?? '100vw';
+        $attributes['alt'] ??= '';
+        $attributes['sizes'] ??= '100vw';
         $attributes['src'] = $this->source($defaultSize);
         $attributes['srcset'] = $this->sourceSet($range);
 
@@ -116,10 +116,13 @@ class Image implements ResponsiveImageable
         switch ($shape) {
             case Shape::Square():
                 return new Square($name, $options, $maker);
+
             case Shape::Tall():
                 return new Tall($name, $options, $maker);
+
             case Shape::Wide():
                 return new Wide($name, $options, $maker);
+
             default:
                 return new self($name, $options, $maker);
         }
