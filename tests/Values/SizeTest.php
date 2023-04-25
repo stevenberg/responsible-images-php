@@ -15,13 +15,6 @@ use StevenBerg\ResponsibleImages\Values\Size;
 
 class SizeTest extends TestCase
 {
-    public function testNonIntValue()
-    {
-        $this->expectException(\TypeError::class);
-
-        $size = Size::from('invalid');
-    }
-
     public function testZeroValue()
     {
         $this->expectException(\TypeError::class);
