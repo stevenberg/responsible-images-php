@@ -17,6 +17,8 @@ use StevenBerg\ResponsibleImages\Values\Size;
 
 class SimpleTest extends TestCase
 {
+    protected Simple $maker;
+
     protected function setUp(): void
     {
         $this->maker = new Simple('https://example.com');

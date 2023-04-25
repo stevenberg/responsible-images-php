@@ -19,6 +19,8 @@ use StevenBerg\ResponsibleImages\Values\Size;
 
 class TallTest extends TestCase
 {
+    protected Tall $image;
+
     protected function setUp(): void
     {
         $this->image = new Tall(

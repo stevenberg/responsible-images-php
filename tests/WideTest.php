@@ -19,6 +19,8 @@ use StevenBerg\ResponsibleImages\Wide;
 
 class WideTest extends TestCase
 {
+    protected Wide $image;
+
     protected function setUp(): void
     {
         $this->image = new Wide(

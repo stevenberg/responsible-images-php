@@ -19,6 +19,8 @@ use StevenBerg\ResponsibleImages\Values\Size;
 
 class SquareTest extends TestCase
 {
+    protected Square $image;
+
     protected function setUp(): void
     {
         $this->image = new Square(

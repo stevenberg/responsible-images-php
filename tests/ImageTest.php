@@ -23,6 +23,8 @@ use StevenBerg\ResponsibleImages\Wide;
 
 class ImageTest extends TestCase
 {
+    protected Image $image;
+
     protected function setUp(): void
     {
         $this->image = new Image(
