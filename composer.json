@@ -20,7 +20,6 @@
   ],
   "require": {
     "php": "^8.0",
-    "myclabs/php-enum": "^1.8",
     "php-ds/php-ds": "^1.4"
   },
   "require-dev": {

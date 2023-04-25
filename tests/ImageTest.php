@@ -27,7 +27,7 @@ class ImageTest extends TestCase
     {
         $this->image = new Image(
             'test.jpg',
-            ['gravity' => Gravity::Auto()],
+            ['gravity' => Gravity::Auto],
             new Simple('https://example.com')
         );
     }
@@ -80,13 +80,13 @@ class ImageTest extends TestCase
     {
         $name = 'test.jpg';
         $maker = new Simple('https://exmaple.com');
-        $options = ['gravity' => Gravity::Auto()];
+        $options = ['gravity' => Gravity::Auto];
 
         $values = [
-            [Shape::Original(), Image::class],
-            [Shape::Square(), Square::class],
-            [Shape::Tall(), Tall::class],
-            [Shape::Wide(), Wide::class],
+            [Shape::Original, Image::class],
+            [Shape::Square, Square::class],
+            [Shape::Tall, Tall::class],
+            [Shape::Wide, Wide::class],
         ];
 
         foreach ($values as [$shape, $class]) {

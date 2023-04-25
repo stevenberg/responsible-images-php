@@ -10,8 +10,6 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use MyCLabs\Enum\Enum;
-
 /**
  * Represents the location of focus when an image is cropped.
  *
@@ -19,8 +17,14 @@ use MyCLabs\Enum\Enum;
  * smart cropping algorithm if available, otherwise it just
  * does the default.
  */
-class Gravity extends Enum
+enum Gravity: string
 {
-    private const Auto = 'auto';
-    private const Center = 'center';
+    case Auto = 'auto';
+
+    case Center = 'center';
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
 }

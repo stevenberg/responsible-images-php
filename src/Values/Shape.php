@@ -10,8 +10,6 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use MyCLabs\Enum\Enum;
-
 /**
  * Represents the shape of the resized images.
  *
@@ -19,10 +17,18 @@ use MyCLabs\Enum\Enum;
  * - `tall` is a rectangle twice as high as it is wide.
  * - `wide` is a rectangle twice as wide as it is high.
  */
-class Shape extends Enum
+enum Shape: string
 {
-    private const Original = 'original';
-    private const Square = 'square';
-    private const Tall = 'tall';
-    private const Wide = 'wide';
+    case Original = 'original';
+
+    case Square = 'square';
+
+    case Tall = 'tall';
+
+    case Wide = 'wide';
+
+    public function getValue(): string
+    {
+        return $this->value;
+    }
 }

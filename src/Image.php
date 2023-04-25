@@ -113,19 +113,12 @@ class Image implements ResponsiveImageable
         array $options = [],
         Maker $maker = null
     ): self {
-        switch ($shape) {
-            case Shape::Square():
-                return new Square($name, $options, $maker);
-
-            case Shape::Tall():
-                return new Tall($name, $options, $maker);
-
-            case Shape::Wide():
-                return new Wide($name, $options, $maker);
-
-            default:
-                return new self($name, $options, $maker);
-        }
+        return match ($shape) {
+            Shape::Original => new self($name, $options, $maker),
+            Shape::Square => new Square($name, $options, $maker),
+            Shape::Tall => new Tall($name, $options, $maker),
+            Shape::Wide => new Wide($name, $options, $maker),
+        };
     }
 
     /**

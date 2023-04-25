@@ -42,7 +42,11 @@ class Simple extends Maker
     {
         return $options->pairs()
             ->map(function ($pair) {
-                return "{$pair->key}-{$pair->value}";
+                $value = method_exists($pair->value, 'getValue')
+                    ? $pair->value->getValue()
+                    : $pair->value;
+
+                return "{$pair->key}-{$value}";
             })
             ->join('_')
         ;
