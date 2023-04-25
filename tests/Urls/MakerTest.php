@@ -16,14 +16,14 @@ use StevenBerg\ResponsibleImages\Urls\Simple;
 
 class MakerTest extends TestCase
 {
-    public function testDefaultMakerWithNoneRegistered()
+    public function testDefaultMakerWithNoneRegistered(): void
     {
         $this->expectException(\RuntimeException::class);
 
         Maker::defaultMaker();
     }
 
-    public function testDefaultMaker()
+    public function testDefaultMaker(): void
     {
         $simple = new Simple('https://example.com');
 

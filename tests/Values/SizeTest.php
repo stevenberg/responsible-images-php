@@ -15,28 +15,28 @@ use StevenBerg\ResponsibleImages\Values\Size;
 
 class SizeTest extends TestCase
 {
-    public function testZeroValue()
+    public function testZeroValue(): void
     {
         $this->expectException(\TypeError::class);
 
         $size = Size::from(0);
     }
 
-    public function testNegativeValue()
+    public function testNegativeValue(): void
     {
         $this->expectException(\TypeError::class);
 
         $size = Size::from(-1);
     }
 
-    public function testStringConversion()
+    public function testStringConversion(): void
     {
         $size = Size::from(10);
 
         $this->assertEquals('10', (string) $size);
     }
 
-    public function testCompare()
+    public function testCompare(): void
     {
         $size = Size::from(10);
         $less = Size::from(9);
@@ -48,7 +48,7 @@ class SizeTest extends TestCase
         $this->assertEquals(1, $size->compare($less));
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         $size = Size::from(1);
 

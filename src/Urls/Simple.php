@@ -20,14 +20,11 @@ use Ds\Map;
  */
 class Simple extends Maker
 {
-    private $urlPrefix;
-
     /**
      * Constructor.
      */
-    public function __construct(string $urlPrefix)
+    public function __construct(private string $urlPrefix)
     {
-        $this->urlPrefix = $urlPrefix;
     }
 
     /**
@@ -38,6 +35,7 @@ class Simple extends Maker
         return "{$this->urlPrefix}/" . $this->joinOptions($options) . "_{$name}";
     }
 
+    /** @param Map<string, mixed> $options */
     private function joinOptions(Map $options): string
     {
         return $options->pairs()

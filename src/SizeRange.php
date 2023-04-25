@@ -64,12 +64,15 @@ class SizeRange
 
     /**
      * Convert the range to an array.
+     *
+     * @return array<int, Size>
      */
     public function toArray(): array
     {
         return iterator_to_array($this->sizes());
     }
 
+    /** @return Vector<Size> */
     public function toVector(): Vector
     {
         return new Vector($this->toArray());

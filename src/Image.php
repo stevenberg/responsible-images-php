@@ -23,10 +23,10 @@ class Image implements ResponsiveImageable
     /**
      * @var string the image's name
      */
-    protected $name;
+    protected string $name;
 
     /**
-     * @var Map options to pass to the URL maker
+     * @var Map<string, mixed> options to pass to the URL maker
      */
     protected Map $options;
 
@@ -38,7 +38,7 @@ class Image implements ResponsiveImageable
     /**
      * Constructor.
      *
-     * @param mixed[] $options options to pass to the URL maker class
+     * @param array<string, mixed> $options options to pass to the URL maker class
      */
     public function __construct(string $name, array $options = [], ?Maker $maker = null)
     {
@@ -124,6 +124,8 @@ class Image implements ResponsiveImageable
     /**
      * Return the list of options to pass to the URL maker class for an image of
      * the given width.
+     *
+     * @return Map<string, mixed>
      */
     protected function options(Size $size): Map
     {

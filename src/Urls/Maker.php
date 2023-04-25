@@ -17,13 +17,13 @@ use Ds\Map;
  */
 abstract class Maker
 {
-    private static $defaultMaker;
+    private static Maker $defaultMaker;
 
     /**
      * Make a URL.
      *
-     * @param string $name    Image name
-     * @param Map    $options Options to pass to the resizing service
+     * @param string             $name    Image name
+     * @param Map<string, mixed> $options Options to pass to the resizing service
      */
     public function make(string $name, Map $options): string
     {
@@ -55,7 +55,7 @@ abstract class Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param Map $options Options to pass to the resizing service
+     * @param Map<string, mixed> $options Options to pass to the resizing service
      */
     abstract protected function url(string $name, Map $options): string;
 }

@@ -34,36 +34,36 @@ class SizeRangeTest extends TestCase
         ];
     }
 
-    public function testInvalidValues()
+    public function testInvalidValues(): void
     {
         $range = SizeRange::from(10, 1, 1);
 
         $this->assertEquals([], $range->toArray());
     }
 
-    public function testSizes()
+    public function testSizes(): void
     {
         foreach ($this->range->sizes() as $i => $size) {
             $this->assertEquals($this->expected[$i], $size);
         }
     }
 
-    public function testArray()
+    public function testArray(): void
     {
         $this->assertEquals($this->expected, $this->range->toArray());
     }
 
-    public function testToVector()
+    public function testToVector(): void
     {
         $this->assertEquals(new Vector($this->expected), $this->range->toVector());
     }
 
-    public function testFirst()
+    public function testFirst(): void
     {
         $this->assertEquals(Size::from(1), $this->range->first());
     }
 
-    public function last()
+    public function last(): void
     {
         $this->assertEquals(Size::from(9), $this->range->last());
     }

@@ -30,7 +30,7 @@ class SquareTest extends TestCase
         );
     }
 
-    public function testSource()
+    public function testSource(): void
     {
         $this->assertEquals(
             'https://example.com/gravity-center_height-100_width-100_test.jpg',
@@ -38,7 +38,7 @@ class SquareTest extends TestCase
         );
     }
 
-    public function testSourceSet()
+    public function testSourceSet(): void
     {
         $expected = implode(', ', [
             'https://example.com/gravity-center_height-100_width-100_test.jpg 100w',

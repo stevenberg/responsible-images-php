@@ -15,15 +15,11 @@ namespace StevenBerg\ResponsibleImages\Values;
  */
 class Size
 {
-    private $value;
-
-    public function __construct(int $value)
+    public function __construct(private int $value)
     {
-        if ($value <= 0) {
+        if ($this->value <= 0) {
             throw new \TypeError('Argument 1 passed to StevenBerg\ResponsibleImages\Values\Size::__construct must be > 0');
         }
-
-        $this->value = $value;
     }
 
     public function __toString(): string
