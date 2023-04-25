@@ -10,8 +10,6 @@ declare(strict_types=1);
 
 namespace StevenBerg\ResponsibleImages\Values;
 
-use TypeError;
-
 /**
  * Represents an image dimension, width or height.
  */
@@ -22,7 +20,7 @@ class Size
     public function __construct(int $value)
     {
         if ($value <= 0) {
-            throw new TypeError('Argument 1 passed to StevenBerg\ResponsibleImages\Values\Size::__construct must be > 0');
+            throw new \TypeError('Argument 1 passed to StevenBerg\ResponsibleImages\Values\Size::__construct must be > 0');
         }
 
         $this->value = $value;

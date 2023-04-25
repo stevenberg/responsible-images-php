@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages\Urls;
 
 use Ds\Map;
-use RuntimeException;
 
 /**
  * Interface for classes that generate resized image URLs.
@@ -47,7 +46,7 @@ abstract class Maker
     public static function defaultMaker(): self
     {
         if (!isset(self::$defaultMaker)) {
-            throw new RuntimeException('Default URL maker has not been registered');
+            throw new \RuntimeException('Default URL maker has not been registered');
         }
 
         return self::$defaultMaker;

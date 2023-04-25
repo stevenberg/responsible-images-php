@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages;
 
 use Ds\Vector;
-use Generator;
 use StevenBerg\ResponsibleImages\Values\Size;
 
 /**
@@ -56,7 +55,7 @@ class SizeRange
     /**
      * Generator function for iterating over the range.
      */
-    public function sizes(): Generator
+    public function sizes(): \Generator
     {
         for ($s = clone $this->min; $s->compare($this->max) < 1; $s = $s->add($this->step)) {
             yield $s;
