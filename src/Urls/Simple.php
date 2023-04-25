@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace StevenBerg\ResponsibleImages\Urls;
 
 use Ds\Map;
+use StevenBerg\ResponsibleImages\Values\Value;
 
 /**
  * Simple URL maker, mainly for testing.
@@ -40,7 +41,7 @@ class Simple extends Maker
     {
         return $options->pairs()
             ->map(function ($pair) {
-                $value = method_exists($pair->value, 'getValue')
+                $value = is_a($pair->value, Value::class)
                     ? $pair->value->getValue()
                     : $pair->value;
 

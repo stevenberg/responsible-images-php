@@ -17,7 +17,7 @@ namespace StevenBerg\ResponsibleImages\Values;
  * - `tall` is a rectangle twice as high as it is wide.
  * - `wide` is a rectangle twice as wide as it is high.
  */
-enum Shape: string
+enum Shape: string implements Value
 {
     case Original = 'original';
 

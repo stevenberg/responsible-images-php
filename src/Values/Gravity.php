@@ -17,7 +17,7 @@ namespace StevenBerg\ResponsibleImages\Values;
  * smart cropping algorithm if available, otherwise it just
  * does the default.
  */
-enum Gravity: string
+enum Gravity: string implements Value
 {
     case Auto = 'auto';
 
