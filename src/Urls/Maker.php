@@ -22,8 +22,8 @@ abstract class Maker
     /**
      * Make a URL.
      *
-     * @param string  $name    Image name
-     * @param mixed[] $options Options to pass to the resizing service
+     * @param string $name    Image name
+     * @param Map    $options Options to pass to the resizing service
      */
     public function make(string $name, Map $options): string
     {
@@ -55,7 +55,7 @@ abstract class Maker
     /**
      * Return a URL for the given image name and options.
      *
-     * @param mixed[] $options Options to pass to the resizing service
+     * @param Map $options Options to pass to the resizing service
      */
     abstract protected function url(string $name, Map $options): string;
 }

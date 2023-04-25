@@ -26,9 +26,9 @@ class Image implements ResponsiveImageable
     protected $name;
 
     /**
-     * @var mixed[] options to pass to the URL maker
+     * @var Map options to pass to the URL maker
      */
-    protected $options;
+    protected Map $options;
 
     /**
      * @var Maker the class to use to generate resized image URLs
