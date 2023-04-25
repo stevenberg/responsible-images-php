@@ -31,16 +31,16 @@ class Image implements ResponsiveImageable
     protected Map $options;
 
     /**
-     * @var Maker the class to use to generate resized image URLs
+     * @var ?Maker the class to use to generate resized image URLs
      */
-    protected $maker;
+    protected ?Maker $maker;
 
     /**
      * Constructor.
      *
      * @param mixed[] $options options to pass to the URL maker class
      */
-    public function __construct(string $name, array $options = [], Maker $maker = null)
+    public function __construct(string $name, array $options = [], ?Maker $maker = null)
     {
         $this->name = $name;
         $this->options = new Map($options);
