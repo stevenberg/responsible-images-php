@@ -19,14 +19,18 @@
     }
   ],
   "require": {
-    "php": "^8.0",
-    "php-ds/php-ds": "^1.4"
+    "php": "^8.2",
+    "php-ds/php-ds": "^1.5"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "~3.15.0",
-    "phpstan/phpstan": "^1.10",
-    "phpunit/phpunit": "^10.1",
-    "psy/psysh": "^0.11.15",
+    "laravel/pint": "^1.17.1",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^1.11.8",
+    "phpstan/phpstan-deprecation-rules": "^1.2",
+    "phpstan/phpstan-phpunit": "^1.4",
+    "phpstan/phpstan-strict-rules": "^1.6",
+    "phpunit/phpunit": "^11.2.9",
+    "psy/psysh": "^0.12.4",
     "roave/security-advisories": "dev-master"
   },
   "autoload": {
@@ -40,6 +44,9 @@
     }
   },
   "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    },
     "sort-packages": true
   },
   "archive": {
