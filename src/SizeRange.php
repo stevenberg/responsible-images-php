@@ -54,6 +54,8 @@ class SizeRange
 
     /**
      * Generator function for iterating over the range.
+     *
+     * @return \Generator<int, Size>
      */
     public function sizes(): \Generator
     {

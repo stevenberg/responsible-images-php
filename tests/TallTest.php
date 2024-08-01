@@ -32,7 +32,7 @@ class TallTest extends TestCase
 
     public function testSource(): void
     {
-        $this->assertEquals(
+        self::assertEquals(
             'https://example.com/gravity-center_height-200_width-100_test.jpg',
             $this->image->source(Size::from(100)),
         );
@@ -55,6 +55,6 @@ class TallTest extends TestCase
 
         $range = SizeRange::from(100, 1000, 100);
 
-        $this->assertEquals($expected, $this->image->sourceSet($range));
+        self::assertEquals($expected, $this->image->sourceSet($range));
     }
 }

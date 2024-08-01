@@ -26,11 +26,13 @@ class SimpleTest extends TestCase
 
     public function testMake(): void
     {
-        $this->assertEquals(
+        /** @var Map<string, OptionType> */
+        $options = new Map(['width' => Size::from(100)]);
+        self::assertEquals(
             'https://example.com/width-100_test.jpg',
             $this->maker->make(
                 'test.jpg',
-                new Map(['width' => Size::from(100)]),
+                $options,
             ),
         );
     }

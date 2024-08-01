@@ -29,7 +29,7 @@ class MakerTest extends TestCase
 
         Maker::registerDefaultMaker($simple);
 
-        $this->assertEquals(
+        self::assertEquals(
             $simple,
             Maker::defaultMaker(),
         );

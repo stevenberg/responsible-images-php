@@ -34,12 +34,12 @@ class Simple extends Maker
         return "{$this->urlPrefix}/" . $this->joinOptions($options) . "_{$name}";
     }
 
-    /** @param Map<string, mixed> $options */
+    /** @param Map<string, OptionType> $options */
     private function joinOptions(Map $options): string
     {
         return $options->pairs()
             ->map(function ($pair) {
-                $value = is_a($pair->value, Value::class)
+                $value = is_object($pair->value) && is_a($pair->value, Value::class)
                     ? $pair->value->getValue()
                     : $pair->value;
 

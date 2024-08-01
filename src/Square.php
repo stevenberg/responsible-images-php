@@ -18,7 +18,7 @@ use StevenBerg\ResponsibleImages\Values\Size;
  */
 class Square extends Image
 {
-    /** @return Map<string, mixed> */
+    /** @return Map<string, OptionType> */
     protected function options(Size $size): Map
     {
         return parent::options($size)->merge([

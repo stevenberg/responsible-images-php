@@ -33,7 +33,7 @@ class SizeTest extends TestCase
     {
         $size = Size::from(10);
 
-        $this->assertEquals('10', (string) $size);
+        self::assertEquals('10', (string) $size);
     }
 
     public function testCompare(): void
@@ -43,15 +43,15 @@ class SizeTest extends TestCase
         $equal = Size::from(10);
         $greater = Size::from(11);
 
-        $this->assertEquals(-1, $size->compare($greater));
-        $this->assertEquals(0, $size->compare($equal));
-        $this->assertEquals(1, $size->compare($less));
+        self::assertEquals(-1, $size->compare($greater));
+        self::assertEquals(0, $size->compare($equal));
+        self::assertEquals(1, $size->compare($less));
     }
 
     public function testGetValue(): void
     {
         $size = Size::from(1);
 
-        $this->assertSame(1, $size->getValue());
+        self::assertSame(1, $size->getValue());
     }
 }

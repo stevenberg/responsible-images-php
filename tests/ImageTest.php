@@ -36,12 +36,12 @@ class ImageTest extends TestCase
 
     public function testToResponsiveImage(): void
     {
-        $this->assertSame($this->image, $this->image->toResponsiveImage());
+        self::assertSame($this->image, $this->image->toResponsiveImage());
     }
 
     public function testSource(): void
     {
-        $this->assertEquals(
+        self::assertEquals(
             'https://example.com/gravity-auto_width-100_test.jpg',
             $this->image->source(Size::from(100)),
         );
@@ -64,7 +64,7 @@ class ImageTest extends TestCase
 
         $range = SizeRange::from(100, 1000, 100);
 
-        $this->assertEquals($expected, $this->image->sourceSet($range));
+        self::assertEquals($expected, $this->image->sourceSet($range));
     }
 
     public function testTag(): void
@@ -75,7 +75,7 @@ class ImageTest extends TestCase
         $defaultSize = Size::from(100);
         $attributes = ['alt' => "Testy O'Testerson"];
 
-        $this->assertEquals($expected, $this->image->tag($range, $defaultSize, $attributes));
+        self::assertEquals($expected, $this->image->tag($range, $defaultSize, $attributes));
     }
 
     public function testFromShape(): void
@@ -92,7 +92,8 @@ class ImageTest extends TestCase
         ];
 
         foreach ($values as [$shape, $class]) {
-            $this->assertInstanceOf($class, Image::fromShape($shape, $name, $options, $maker));
+            // @phpstan-ignore staticMethod.alreadyNarrowedType
+            self::assertInstanceOf($class, Image::fromShape($shape, $name, $options, $maker));
         }
     }
 }

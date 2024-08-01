@@ -26,7 +26,7 @@ class Image implements ResponsiveImageable
     protected string $name;
 
     /**
-     * @var Map<string, mixed> options to pass to the URL maker
+     * @var Map<string, OptionType> options to pass to the URL maker
      */
     protected Map $options;
 
@@ -38,7 +38,7 @@ class Image implements ResponsiveImageable
     /**
      * Constructor.
      *
-     * @param  array<string, mixed>  $options  options to pass to the URL maker class
+     * @param  array<string, OptionType>  $options  options to pass to the URL maker class
      */
     public function __construct(string $name, array $options = [], ?Maker $maker = null)
     {
@@ -105,7 +105,7 @@ class Image implements ResponsiveImageable
      * Return an `Image` object of the appropriate class based on
      * a `Shape` value.
      *
-     * @param  mixed[]  $options  options to pass to the URL maker class
+     * @param  array<string, OptionType>  $options  options to pass to the URL maker class
      */
     public static function fromShape(
         Shape $shape,
@@ -125,7 +125,7 @@ class Image implements ResponsiveImageable
      * Return the list of options to pass to the URL maker class for an image of
      * the given width.
      *
-     * @return Map<string, mixed>
+     * @return Map<string, OptionType>
      */
     protected function options(Size $size): Map
     {
