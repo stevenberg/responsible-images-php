@@ -53,5 +53,12 @@
     "exclude": [
       "/tests"
     ]
+  },
+  "extra": {
+    "phpstan": {
+      "includes": [
+        "extension.neon"
+      ]
+    }
   }
 }

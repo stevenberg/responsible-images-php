@@ -1,0 +1,3 @@
+parameters:
+  typeAliases:
+    ResponsibleImagesOptionType: 'bool|int|string|\Stringable|StevenBerg\ResponsibleImages\Values\Value'

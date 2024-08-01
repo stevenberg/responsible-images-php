@@ -1,7 +1,7 @@
+includes:
+  - extension.neon
 parameters:
   paths:
     - src
     - tests
   level: max
-  typeAliases:
-    OptionType: 'bool|int|string|\Stringable|StevenBerg\ResponsibleImages\Values\Value'

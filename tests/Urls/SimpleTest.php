@@ -26,7 +26,7 @@ class SimpleTest extends TestCase
 
     public function testMake(): void
     {
-        /** @var Map<string, OptionType> */
+        /** @var Map<string, ResponsibleImagesOptionType> */
         $options = new Map(['width' => Size::from(100)]);
         self::assertEquals(
             'https://example.com/width-100_test.jpg',

@@ -18,7 +18,7 @@ use StevenBerg\ResponsibleImages\Values\Size;
  */
 class Wide extends Image
 {
-    /** @return Map<string, OptionType> */
+    /** @return Map<string, ResponsibleImagesOptionType> */
     protected function options(Size $size): Map
     {
         return parent::options($size)->merge([
