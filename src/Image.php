@@ -38,7 +38,7 @@ class Image implements ResponsiveImageable
     /**
      * Constructor.
      *
-     * @param array<string, mixed> $options options to pass to the URL maker class
+     * @param  array<string, mixed>  $options  options to pass to the URL maker class
      */
     public function __construct(string $name, array $options = [], ?Maker $maker = null)
     {
@@ -79,7 +79,7 @@ class Image implements ResponsiveImageable
     /**
      * Return a responsive HTML `img` tag for the image.
      *
-     * @param string[] $attributes list of attributes to add to the `img` tag
+     * @param  string[]  $attributes  list of attributes to add to the `img` tag
      */
     public function tag(SizeRange $range, Size $defaultSize, array $attributes = []): string
     {
@@ -105,13 +105,13 @@ class Image implements ResponsiveImageable
      * Return an `Image` object of the appropriate class based on
      * a `Shape` value.
      *
-     * @param mixed[] $options options to pass to the URL maker class
+     * @param  mixed[]  $options  options to pass to the URL maker class
      */
     public static function fromShape(
         Shape $shape,
         string $name,
         array $options = [],
-        Maker $maker = null
+        Maker $maker = null,
     ): self {
         return match ($shape) {
             Shape::Original => new self($name, $options, $maker),

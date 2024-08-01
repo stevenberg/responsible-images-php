@@ -1,0 +1,65 @@
+{
+  "preset": "per",
+  "rules": {
+    "array_syntax": {
+      "syntax": "short"
+    },
+    "declare_strict_types": true,
+    "explicit_string_variable": true,
+    "mb_str_functions": true,
+    "multiline_whitespace_before_semicolons": {
+      "strategy": "new_line_for_chained_calls"
+    },
+    "no_extra_blank_lines": {
+      "tokens": [
+        "curly_brace_block",
+        "extra",
+        "parenthesis_brace_block",
+        "square_brace_block",
+        "throw",
+        "use"
+      ]
+    },
+    "no_unused_imports": true,
+    "ordered_imports": {
+      "imports_order": ["class", "function", "const"],
+      "sort_algorithm": "alpha"
+    },
+    "phpdoc_align": {
+      "align": "left",
+      "spacing": {
+        "param": 2
+      }
+    },
+    "phpdoc_indent": true,
+    "phpdoc_inline_tag_normalizer": true,
+    "phpdoc_no_access": true,
+    "phpdoc_no_package": true,
+    "phpdoc_no_useless_inheritdoc": true,
+    "phpdoc_order": {
+      "order": ["param", "return", "throws"]
+    },
+    "phpdoc_scalar": true,
+    "phpdoc_separation": {
+      "groups": [
+        ["deprecated", "link", "see", "since"],
+        ["author", "copyright", "license"],
+        ["category", "package", "subpackage"],
+        ["property", "property-read", "property-write"],
+        ["param", "return"]
+      ]
+    },
+    "phpdoc_single_line_var_spacing": true,
+    "phpdoc_summary": false,
+    "phpdoc_tag_type": {
+      "tags": {
+        "inheritdoc": "inline"
+      }
+    },
+    "phpdoc_to_comment": false,
+    "phpdoc_trim": true,
+    "phpdoc_types": true,
+    "phpdoc_var_without_name": true,
+    "single_quote": true
+  }
+}

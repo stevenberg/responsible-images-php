@@ -31,7 +31,7 @@ class MakerTest extends TestCase
 
         $this->assertEquals(
             $simple,
-            Maker::defaultMaker()
+            Maker::defaultMaker(),
         );
     }
 }

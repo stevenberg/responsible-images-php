@@ -30,8 +30,8 @@ class SimpleTest extends TestCase
             'https://example.com/width-100_test.jpg',
             $this->maker->make(
                 'test.jpg',
-                new Map(['width' => Size::from(100)])
-            )
+                new Map(['width' => Size::from(100)]),
+            ),
         );
     }
 }

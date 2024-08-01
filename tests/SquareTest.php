@@ -26,7 +26,7 @@ class SquareTest extends TestCase
         $this->image = new Square(
             'test.jpg',
             ['gravity' => Gravity::Center],
-            new Simple('https://example.com')
+            new Simple('https://example.com'),
         );
     }
 
@@ -34,7 +34,7 @@ class SquareTest extends TestCase
     {
         $this->assertEquals(
             'https://example.com/gravity-center_height-100_width-100_test.jpg',
-            $this->image->source(Size::from(100))
+            $this->image->source(Size::from(100)),
         );
     }
 

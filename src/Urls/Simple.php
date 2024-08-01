@@ -24,9 +24,7 @@ class Simple extends Maker
     /**
      * Constructor.
      */
-    public function __construct(private string $urlPrefix)
-    {
-    }
+    public function __construct(private string $urlPrefix) {}
 
     /**
      * {@inheritdoc}

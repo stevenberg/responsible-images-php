@@ -30,7 +30,7 @@ class ImageTest extends TestCase
         $this->image = new Image(
             'test.jpg',
             ['gravity' => Gravity::Auto],
-            new Simple('https://example.com')
+            new Simple('https://example.com'),
         );
     }
 
@@ -43,7 +43,7 @@ class ImageTest extends TestCase
     {
         $this->assertEquals(
             'https://example.com/gravity-auto_width-100_test.jpg',
-            $this->image->source(Size::from(100))
+            $this->image->source(Size::from(100)),
         );
     }
 
