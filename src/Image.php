@@ -111,7 +111,7 @@ class Image implements ResponsiveImageable
         Shape $shape,
         string $name,
         array $options = [],
-        Maker $maker = null,
+        ?Maker $maker = null,
     ): self {
         return match ($shape) {
             Shape::Original => new self($name, $options, $maker),
