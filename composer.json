@@ -20,17 +20,17 @@
   ],
   "require": {
     "php": "^8.2",
-    "php-ds/php-ds": "^1.5"
+    "php-ds/php-ds": "^1.7"
   },
   "require-dev": {
-    "laravel/pint": "^1.17.1",
-    "phpstan/extension-installer": "^1.4",
-    "phpstan/phpstan": "^1.11.8",
-    "phpstan/phpstan-deprecation-rules": "^1.2",
-    "phpstan/phpstan-phpunit": "^1.4",
-    "phpstan/phpstan-strict-rules": "^1.6",
-    "phpunit/phpunit": "^11.2.9",
-    "psy/psysh": "^0.12.4",
+    "laravel/pint": "^1.24.0",
+    "phpstan/extension-installer": "^1.4.3",
+    "phpstan/phpstan": "^2.1.22",
+    "phpstan/phpstan-deprecation-rules": "^2.0.3",
+    "phpstan/phpstan-phpunit": "^2.0.7",
+    "phpstan/phpstan-strict-rules": "^2.0.6",
+    "phpunit/phpunit": "^12.3.6",
+    "psy/psysh": "^0.12.10",
     "roave/security-advisories": "dev-master"
   },
   "autoload": {
