@@ -41,7 +41,7 @@ class ImageTest extends TestCase
 
     public function testSource(): void
     {
-        self::assertEquals(
+        self::assertSame(
             'https://example.com/gravity-auto_width-100_test.jpg',
             $this->image->source(Size::from(100)),
         );
@@ -64,7 +64,7 @@ class ImageTest extends TestCase
 
         $range = SizeRange::from(100, 1000, 100);
 
-        self::assertEquals($expected, $this->image->sourceSet($range));
+        self::assertSame($expected, $this->image->sourceSet($range));
     }
 
     public function testTag(): void
@@ -75,7 +75,7 @@ class ImageTest extends TestCase
         $defaultSize = Size::from(100);
         $attributes = ['alt' => "Testy O'Testerson"];
 
-        self::assertEquals($expected, $this->image->tag($range, $defaultSize, $attributes));
+        self::assertSame($expected, $this->image->tag($range, $defaultSize, $attributes));
     }
 
     public function testFromShape(): void

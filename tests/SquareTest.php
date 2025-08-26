@@ -32,7 +32,7 @@ class SquareTest extends TestCase
 
     public function testSource(): void
     {
-        self::assertEquals(
+        self::assertSame(
             'https://example.com/gravity-center_height-100_width-100_test.jpg',
             $this->image->source(Size::from(100)),
         );
@@ -55,6 +55,6 @@ class SquareTest extends TestCase
 
         $range = SizeRange::from(100, 1000, 100);
 
-        self::assertEquals($expected, $this->image->sourceSet($range));
+        self::assertSame($expected, $this->image->sourceSet($range));
     }
 }

@@ -28,7 +28,7 @@ class SimpleTest extends TestCase
     {
         /** @var Map<string, ResponsibleImagesOptionType> */
         $options = new Map(['width' => Size::from(100)]);
-        self::assertEquals(
+        self::assertSame(
             'https://example.com/width-100_test.jpg',
             $this->maker->make(
                 'test.jpg',
